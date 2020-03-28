@@ -39,6 +39,9 @@ jobs:
       # build
       - run: npm run build -- --base-href /gdpr-transparency/ --deploy-url /gdpr-transparency/ --prod
 
+      # deploy
+      - run: npx angular-cli-ghpages --dir=dist/gdpr-transparency --repo=https://GH_TOKEN@github.com/BjoernKW/gdpr-transparency.git --name="BjoernKW" --email=bjoern@bjoernkw.com
+
 workflows:
   version: 2
   main:
