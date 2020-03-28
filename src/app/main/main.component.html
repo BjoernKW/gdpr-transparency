@@ -1,11 +1,14 @@
 <p-tabView>
-  <p-tabPanel header="Record of processing activities" rightIcon="pi pi-folder">
-    Record of processing activities
+  <p-tabPanel [header]="'masterData' | translate" rightIcon="pi pi-id-card">
+    <app-master-data></app-master-data>
   </p-tabPanel>
-  <p-tabPanel header="Technical and organisational measures" rightIcon="pi pi-briefcase">
-    Technical and organisational measures
+  <p-tabPanel [header]="'recordOfProcessingActivities' | translate" rightIcon="pi pi-folder">
+    <app-processing-activities></app-processing-activities>
   </p-tabPanel>
-  <p-tabPanel header="Data" rightIcon="pi pi-file">
-    Data
+  <p-tabPanel [header]="'technicalAndOrganisationalMeasures' | translate" rightIcon="pi pi-briefcase">
+    <app-measures></app-measures>
+  </p-tabPanel>
+  <p-tabPanel [header]="'dataImportExport' | translate" rightIcon="pi pi-file">
+    <app-data-import-export></app-data-import-export>
   </p-tabPanel>
 </p-tabView>

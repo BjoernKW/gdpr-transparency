@@ -1,0 +1,75 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="description">{{ 'description' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="description"
+           formControlName="description"
+           [placeholder]="'description' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="personResponsible">{{ 'personResponsible' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="personResponsible"
+           formControlName="personResponsible"
+           [placeholder]="'personResponsible' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="purpose">{{ 'purpose' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="purpose"
+           formControlName="purpose"
+           [placeholder]="'purpose' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="affectedGroups">{{ 'affectedGroups' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="affectedGroups"
+           formControlName="affectedGroups"
+           [placeholder]="'affectedGroups' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="recipients">{{ 'recipients' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="recipients"
+           formControlName="recipients"
+           [placeholder]="'recipients' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="thirdCountryDataTransfers">{{ 'recipients' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="thirdCountryDataTransfers"
+           formControlName="thirdCountryDataTransfers"
+           [placeholder]="'thirdCountryDataTransfers' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="dataDeletionPeriod">{{ 'dataDeletionPeriod' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="dataDeletionPeriod"
+           formControlName="dataDeletionPeriod"
+           [placeholder]="'dataDeletionPeriod' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="resourcesUsed">{{ 'resourcesUsed' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="resourcesUsed"
+           formControlName="resourcesUsed"
+           [placeholder]="'resourcesUsed' | translate"
+           required>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="save()">{{ 'submit' | translate }}</button>
+</form>

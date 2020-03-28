@@ -1,0 +1,30 @@
+<form [formGroup]="form">
+  <div class="form-group">
+    <label for="company">{{ 'company' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="company"
+           formControlName="company"
+           [placeholder]="'company' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="legalRepresentative">{{ 'legalRepresentative' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="legalRepresentative"
+           formControlName="legalRepresentative"
+           [placeholder]="'legalRepresentative' | translate"
+           required>
+  </div>
+  <div class="form-group">
+    <label for="address">{{ 'address' | translate }}</label>
+    <input type="text"
+           class="form-control"
+           id="address"
+           formControlName="address"
+           [placeholder]="'address' | translate"
+           required>
+  </div>
+  <button type="submit" class="btn btn-primary" (click)="save()">{{ 'submit' | translate }}</button>
+</form>

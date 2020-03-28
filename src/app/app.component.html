@@ -3,7 +3,10 @@
     <div class="row">
       <a name="top"></a>
       <div class="col-sm-12">
-        <h1>GDPR Transparency</h1>
+        <h1>
+          <span *ngIf="!masterData">GDPR Transparency</span>
+          <span *ngIf="masterData">{{ masterData.company }}</span>
+        </h1>
       </div>
     </div>
   </div>

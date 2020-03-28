@@ -1,0 +1,18 @@
+{
+  "masterData": "Master data",
+  "company": "Company",
+  "legalRepresentative": "Legal representative",
+  "address": "Address",
+  "recordOfProcessingActivities": "Record of processing activities",
+  "technicalAndOrganisationalMeasures": "Technical and organisational measures",
+  "dataImportExport": "Data Import & Export",
+  "description": "Description",
+  "personResponsible": "Person responsible",
+  "purpose": "Purpose",
+  "affectedGroups": "Affected groups",
+  "recipients": "Recipients",
+  "thirdCountryDataTransfers": "Third country data transfers",
+  "dataDeletionPeriod": "Deletion period",
+  "resourcesUsed": "Resources used",
+  "submit": "Submit"
+}

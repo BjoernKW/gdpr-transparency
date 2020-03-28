@@ -6,16 +6,38 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
-import {TabViewModule} from 'primeng/tabview';
+import { TabViewModule } from 'primeng/tabview';
+import { InputTextModule } from 'primeng/inputtext';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MainComponent } from './main/main.component';
+import { ProcessingActivitiesComponent } from './processing-activities/processing-activities.component';
+import { MeasuresComponent } from './measures/measures.component';
+import { MasterDataComponent } from './master-data/master-data.component';
+import { DataImportExportComponent } from './data-import-export/data-import-export.component';
 
+import { registerLocaleData } from '@angular/common';
+import localeEN from '@angular/common/locales/en';
+import localeDE from '@angular/common/locales/de';
+import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
+import { TranslateHttpLoader } from "@ngx-translate/http-loader";
+import { HttpClient, HttpClientModule } from "@angular/common/http";
+
+registerLocaleData(localeEN);
+registerLocaleData(localeDE);
+
+export function HttpLoaderFactory(http: HttpClient) {
+  return new TranslateHttpLoader(http);
+}
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainComponent
+    MainComponent,
+    ProcessingActivitiesComponent,
+    MeasuresComponent,
+    MasterDataComponent,
+    DataImportExportComponent
   ],
   imports: [
     BrowserModule,
@@ -23,7 +45,17 @@ import { MainComponent } from './main/main.component';
     ReactiveFormsModule,
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
-    TabViewModule
+    HttpClientModule,
+    TranslateModule.forRoot({
+      defaultLanguage: 'en',
+      loader: {
+        provide: TranslateLoader,
+        useFactory: HttpLoaderFactory,
+        deps: [HttpClient]
+      }
+    }),
+    TabViewModule,
+    InputTextModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -21,6 +21,8 @@
     "@angular/platform-browser-dynamic": "~9.0.0",
     "@angular/router": "~9.0.0",
     "@angular/service-worker": "~9.0.0",
+    "@ngx-translate/core": "^12.1.2",
+    "@ngx-translate/http-loader": "^4.0.0",
     "bootstrap": "^4.4.1",
     "dexie": "^2.0.4",
     "dexie-export-import": "^1.0.0-rc.1",
