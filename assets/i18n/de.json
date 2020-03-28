@@ -1,0 +1,18 @@
+{
+  "masterData": "Stammdaten",
+  "company": "Unternehmen",
+  "legalRepresentative": "Gesetzlicher Vertreter",
+  "address": "Adresse",
+  "recordOfProcessingActivities": "Verzeichnis von Verarbeitungstätigkeiten",
+  "technicalAndOrganisationalMeasures": "Technische und organisatorische Maßnahmen",
+  "dataImportExport": "Daten Import & Export",
+  "description": "Beschreibung",
+  "personResponsible": "Verantwortlicher",
+  "purpose": "Zwecke",
+  "affectedGroups": "Betroffene Personengruppen",
+  "recipients": "Empfänger",
+  "thirdCountryDataTransfers": "Datenübermittlungen in Drittländer ",
+  "dataDeletionPeriod": "Löschungsfrist",
+  "resourcesUsed": "Verwendete Ressourcen",
+  "submit": "Abschicken"
+}
