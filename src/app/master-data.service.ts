@@ -18,23 +18,23 @@ export class MasterDataService {
     this.table = this.dexieService.table('masterData');
   }
 
+  get(id: number) {
+    return this.table.get(id);
+  }
+
   getAll() {
     return this.table.toArray();
   }
 
   add(data) {
-    this._masterDataChanged.next(data);
-
     return this.table.add(data);
   }
 
-  update(id, data) {
-    this._masterDataChanged.next(data);
-
+  update(id: number, data) {
     return this.table.update(id, data);
   }
 
-  remove(id) {
+  remove(id: number) {
     return this.table.delete(id);
   }
 }

@@ -29,16 +29,24 @@ export class MasterDataComponent implements OnInit {
     this._masterDataService.getAll().then(value => {
       this._masterData = value[0];
       if (this._masterData) {
+        let masterDataID;
         if (this._masterData.id) {
+          masterDataID = this._masterData.id;
           delete this._masterData.id;
         }
 
         this.form.setValue(this._masterData);
+
+        this._masterData['id'] = masterDataID;
       }
     });
   }
 
   save(): void {
-    this._masterDataService.add(this.form.value);
+    if (this._masterData) {
+      this._masterDataService.update(this._masterData.id, this.form.value);
+    } else {
+      this._masterDataService.add(this.form.value);
+    }
   }
 }

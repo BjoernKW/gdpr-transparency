@@ -14,5 +14,12 @@
   "thirdCountryDataTransfers": "Third country data transfers",
   "dataDeletionPeriod": "Deletion period",
   "resourcesUsed": "Resources used",
-  "submit": "Submit"
+  "submit": "Submit",
+  "reset": "Reset",
+  "delete": "Delete",
+  "areYouSure": "Are you sure that you want to perform this action?",
+  "confirmation": "Confirmation",
+  "yes": "Yes",
+  "no": "No",
+  "id": "ID"
 }

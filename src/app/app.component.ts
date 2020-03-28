@@ -2,6 +2,7 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 import { MasterData } from "./model/master-data";
 import { MasterDataService } from "./master-data.service";
 import { Subscription } from "rxjs";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-root',
@@ -15,8 +16,11 @@ export class AppComponent implements OnInit, OnDestroy {
   private _masterDataSubscription: Subscription;
 
   constructor(
-    private _masterDataService: MasterDataService
+    private _masterDataService: MasterDataService,
+    private _translateService: TranslateService
   ) {
+    this._translateService.setDefaultLang('en');
+    this._translateService.use('en');
   }
 
   ngOnInit(): void {

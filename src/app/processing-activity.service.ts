@@ -14,6 +14,10 @@ export class ProcessingActivityService {
     this.table = this.dexieService.table('processingActivities');
   }
 
+  get(id: number) {
+    return this.table.get(id);
+  }
+
   getAll() {
     return this.table.toArray();
   }
@@ -22,11 +26,11 @@ export class ProcessingActivityService {
     return this.table.add(data);
   }
 
-  update(id, data) {
+  update(id: number, data) {
     return this.table.update(id, data);
   }
 
-  remove(id) {
+  remove(id: number) {
     return this.table.delete(id);
   }
 }

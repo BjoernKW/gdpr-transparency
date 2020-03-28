@@ -14,6 +14,10 @@ export class MeasureService {
     this.table = this.dexieService.table('measures');
   }
 
+  get(id: number) {
+    return this.table.get(id);
+  }
+
   getAll() {
     return this.table.toArray();
   }
@@ -22,11 +26,11 @@ export class MeasureService {
     return this.table.add(data);
   }
 
-  update(id, data) {
+  update(id: number, data) {
     return this.table.update(id, data);
   }
 
-  remove(id) {
+  remove(id: number) {
     return this.table.delete(id);
   }
 }

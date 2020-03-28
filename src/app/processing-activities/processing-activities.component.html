@@ -1,4 +1,5 @@
-<form [formGroup]="form">
+<form [formGroup]="form"
+      class="do-not-print">
   <div class="form-group">
     <label for="description">{{ 'description' | translate }}</label>
     <input type="text"
@@ -45,7 +46,7 @@
            required>
   </div>
   <div class="form-group">
-    <label for="thirdCountryDataTransfers">{{ 'recipients' | translate }}</label>
+    <label for="thirdCountryDataTransfers">{{ 'thirdCountryDataTransfers' | translate }}</label>
     <input type="text"
            class="form-control"
            id="thirdCountryDataTransfers"
@@ -71,5 +72,51 @@
            [placeholder]="'resourcesUsed' | translate"
            required>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="save()">{{ 'submit' | translate }}</button>
+  <button type="submit"
+          class="btn btn-primary"
+          (click)="save()"
+          [disabled]="form.invalid">{{ 'submit' | translate }}</button>
+  &nbsp;
+  <button type="reset"
+          class="btn btn-secondary"
+          (click)="reset()">{{ 'reset' | translate }}</button>
 </form>
+
+<hr>
+
+<p-table [columns]="columns"
+         [value]="processingActivities"
+         [totalRecords]="processingActivities ? processingActivities.length : 0"
+         [loading]="loading"
+         [lazy]="true"
+         (onLazyLoad)="loadList()"
+         selectionMode="single"
+         dataKey="description"
+         [(selection)]="selectedProcessingActivity"
+         (onRowSelect)="onRowSelect()">
+  <ng-template pTemplate="header"
+               let-columns>
+    <tr>
+      <th scope="col" *ngFor="let column of columns">
+        {{ column.header }}
+      </th>
+      <th scope="col"
+          class="do-not-print"></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body"
+               let-rowData
+               let-columns="columns">
+    <tr [pSelectableRow]="rowData">
+      <td *ngFor="let column of columns">
+        {{ rowData[column.field] }}
+      </td>
+      <td class="do-not-print">
+        <button type="submit" class="btn btn-danger" (click)="delete(rowData['id'])">
+          {{ 'delete' | translate }}
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

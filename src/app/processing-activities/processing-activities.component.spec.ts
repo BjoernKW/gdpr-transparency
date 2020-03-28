@@ -2,8 +2,8 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProcessingActivitiesComponent } from './processing-activities.component';
 import { ReactiveFormsModule } from "@angular/forms";
-import { TabViewModule } from "primeng/tabview";
 import { TranslateModule } from "@ngx-translate/core";
+import { TableModule } from "primeng/table";
 
 describe('ProcessingActivitiesComponent', () => {
   let component: ProcessingActivitiesComponent;
@@ -14,6 +14,7 @@ describe('ProcessingActivitiesComponent', () => {
       declarations: [ ProcessingActivitiesComponent ],
       imports: [
         ReactiveFormsModule,
+        TableModule,
         TranslateModule.forRoot()
       ]
     })

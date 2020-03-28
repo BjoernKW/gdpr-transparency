@@ -8,6 +8,7 @@ import { ProcessingActivitiesComponent } from "../processing-activities/processi
 import { MeasuresComponent } from "../measures/measures.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { DataImportExportComponent } from "../data-import-export/data-import-export.component";
+import { TableModule } from "primeng/table";
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -24,6 +25,7 @@ describe('MainComponent', () => {
       ],
       imports: [
         TabViewModule,
+        TableModule,
         ReactiveFormsModule,
         TranslateModule.forRoot()
       ]

@@ -13,6 +13,12 @@
 </header>
 <hr>
 <div class="container-fluid">
+  <p-confirmDialog #confirmDialog header="{{ 'confirmation' | translate }}" icon="pi pi-exclamation-triangle">
+    <p-footer>
+      <button type="button" pButton icon="pi pi-check" label="{{ 'yes' | translate }}" (click)="confirmDialog.accept()"></button>
+      <button type="button" pButton icon="pi pi-times" label="{{ 'no' | translate }}" (click)="confirmDialog.reject()"></button>
+    </p-footer>
+  </p-confirmDialog>
   <router-outlet></router-outlet>
 </div>
 <hr>

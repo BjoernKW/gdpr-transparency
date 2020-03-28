@@ -7,7 +7,6 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
 import { TabViewModule } from 'primeng/tabview';
-import { InputTextModule } from 'primeng/inputtext';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ReactiveFormsModule } from "@angular/forms";
 import { MainComponent } from './main/main.component';
@@ -22,6 +21,10 @@ import localeDE from '@angular/common/locales/de';
 import { TranslateLoader, TranslateModule } from "@ngx-translate/core";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 import { HttpClient, HttpClientModule } from "@angular/common/http";
+import { TableModule } from "primeng/table";
+import { ConfirmDialogModule } from 'primeng/confirmdialog';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ConfirmationService } from "primeng/api";
 
 registerLocaleData(localeEN);
 registerLocaleData(localeDE);
@@ -55,9 +58,13 @@ export function HttpLoaderFactory(http: HttpClient) {
       }
     }),
     TabViewModule,
-    InputTextModule
+    TableModule,
+    ConfirmDialogModule,
+    FontAwesomeModule
   ],
-  providers: [],
+  providers: [
+    ConfirmationService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
