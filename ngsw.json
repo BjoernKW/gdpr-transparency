@@ -1,0 +1,128 @@
+{
+  "configVersion": 1,
+  "timestamp": 1585402628493,
+  "index": "/gdpr-transparency/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "/gdpr-transparency/favicon.ico",
+        "/gdpr-transparency/index.html",
+        "/gdpr-transparency/main-es2015.9052da69c6304c9b7f09.js",
+        "/gdpr-transparency/main-es5.9052da69c6304c9b7f09.js",
+        "/gdpr-transparency/manifest.webmanifest",
+        "/gdpr-transparency/polyfills-es2015.08024755fe2d706d42ca.js",
+        "/gdpr-transparency/polyfills-es5.f4c497f5736cc6c66627.js",
+        "/gdpr-transparency/runtime-es2015.b2049804e4bc9cb1d99d.js",
+        "/gdpr-transparency/runtime-es5.b2049804e4bc9cb1d99d.js",
+        "/gdpr-transparency/styles.6e9642e69d7af92026db.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "urls": [
+        "/gdpr-transparency/assets/icons/icon-128x128.png",
+        "/gdpr-transparency/assets/icons/icon-144x144.png",
+        "/gdpr-transparency/assets/icons/icon-152x152.png",
+        "/gdpr-transparency/assets/icons/icon-192x192.png",
+        "/gdpr-transparency/assets/icons/icon-384x384.png",
+        "/gdpr-transparency/assets/icons/icon-512x512.png",
+        "/gdpr-transparency/assets/icons/icon-72x72.png",
+        "/gdpr-transparency/assets/icons/icon-96x96.png",
+        "/gdpr-transparency/color.c7a33805ffda0d32bd2a.png",
+        "/gdpr-transparency/hue.0614c27197fc3ce572e1.png",
+        "/gdpr-transparency/line.567f57385ea3dde2c9ae.gif",
+        "/gdpr-transparency/loading.8732a6660b528fadfaeb.gif",
+        "/gdpr-transparency/open-sans-v15-latin-300.177cc92d2e8027712a8c.ttf",
+        "/gdpr-transparency/open-sans-v15-latin-300.27ef0b062b2e221df16f.svg",
+        "/gdpr-transparency/open-sans-v15-latin-300.521d17bc9f3526c690e8.woff",
+        "/gdpr-transparency/open-sans-v15-latin-300.60c866748ff15f5b347f.woff2",
+        "/gdpr-transparency/open-sans-v15-latin-300.76b56857ebbae3a5a689.eot",
+        "/gdpr-transparency/open-sans-v15-latin-700.148a6749baa5f658a451.eot",
+        "/gdpr-transparency/open-sans-v15-latin-700.2e00b2635b51ba336b4b.svg",
+        "/gdpr-transparency/open-sans-v15-latin-700.623e3205570002af47fc.woff",
+        "/gdpr-transparency/open-sans-v15-latin-700.7e08cc656863d52bcb5c.ttf",
+        "/gdpr-transparency/open-sans-v15-latin-700.d08c09f2f169f4a6edbc.woff2",
+        "/gdpr-transparency/open-sans-v15-latin-regular.7aab4c13671282c90669.svg",
+        "/gdpr-transparency/open-sans-v15-latin-regular.9dce7f01715340861bdb.eot",
+        "/gdpr-transparency/open-sans-v15-latin-regular.bf2d0783515b7d75c35b.woff",
+        "/gdpr-transparency/open-sans-v15-latin-regular.c045b73d86803686f4cd.ttf",
+        "/gdpr-transparency/open-sans-v15-latin-regular.cffb686d7d2f4682df83.woff2",
+        "/gdpr-transparency/password-meter.d59e6dc2616c53ce8e77.png",
+        "/gdpr-transparency/primeicons.2d2afb2719a1ee903e57.eot",
+        "/gdpr-transparency/primeicons.66ee0deb739ca71f0ecd.woff",
+        "/gdpr-transparency/primeicons.df0140f8e79ecfeffaf8.ttf",
+        "/gdpr-transparency/primeicons.e5e0e94474d5fd92e7e8.svg"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "/gdpr-transparency/assets/icons/icon-128x128.png": "890e17c59404c5993d64a2174ece839549824249",
+    "/gdpr-transparency/assets/icons/icon-144x144.png": "e2f6c50cdb690c46e81b09aae43bf54e5a26458e",
+    "/gdpr-transparency/assets/icons/icon-152x152.png": "e50a312669a14e6d7d55f16cd50bbfab68dcecbd",
+    "/gdpr-transparency/assets/icons/icon-192x192.png": "af167a7d1af3729c3e78fd22103c5660b6dba073",
+    "/gdpr-transparency/assets/icons/icon-384x384.png": "fe85fe3edbe15f1d62fa1183da382a7fd4fc0b9f",
+    "/gdpr-transparency/assets/icons/icon-512x512.png": "59528b529ae2e161a756bc78f30ad6d197da8c32",
+    "/gdpr-transparency/assets/icons/icon-72x72.png": "215fbbfa00c0f7169dc27629724ff66d8deb0aa2",
+    "/gdpr-transparency/assets/icons/icon-96x96.png": "18e797582a3871439a72099ecd369535d84f3e99",
+    "/gdpr-transparency/color.c7a33805ffda0d32bd2a.png": "ff4c4bcb2207891b292f544edb4da9d2df5d45cf",
+    "/gdpr-transparency/favicon.ico": "bbe23fae49ff2c1f7ba21308286d95d516eb96f7",
+    "/gdpr-transparency/hue.0614c27197fc3ce572e1.png": "f81ae627637a684614aa726e206c73ce099a01fd",
+    "/gdpr-transparency/index.html": "5bbb7e073ed75d39ecdcdc32742e72c085ba3bd3",
+    "/gdpr-transparency/line.567f57385ea3dde2c9ae.gif": "a2af20bd160ca9cfc2c85527663ff7429267519a",
+    "/gdpr-transparency/loading.8732a6660b528fadfaeb.gif": "72998a116936156dc7cace0606dab499fe4f3ce8",
+    "/gdpr-transparency/main-es2015.9052da69c6304c9b7f09.js": "0bbc16073259ca2f0043a3e3ba75d5a2dad538bf",
+    "/gdpr-transparency/main-es5.9052da69c6304c9b7f09.js": "adbf79a29562bf89ae2df6169db787923d9de0b4",
+    "/gdpr-transparency/manifest.webmanifest": "4f7b4f0b84460daeeeae6128618434b737a4806b",
+    "/gdpr-transparency/open-sans-v15-latin-300.177cc92d2e8027712a8c.ttf": "861b3593521709d9fa8a8efb6f40817dd7fa9337",
+    "/gdpr-transparency/open-sans-v15-latin-300.27ef0b062b2e221df16f.svg": "1183c2939f6cad1ac69dc16d4a0b943d546e4b2e",
+    "/gdpr-transparency/open-sans-v15-latin-300.521d17bc9f3526c690e8.woff": "0c74bab4a4ebdafe080c8a35bd61d38f1b692358",
+    "/gdpr-transparency/open-sans-v15-latin-300.60c866748ff15f5b347f.woff2": "34f486906decb7c8cf7a02d4758add9a2408c7a5",
+    "/gdpr-transparency/open-sans-v15-latin-300.76b56857ebbae3a5a689.eot": "7ee41fc56711a91b386b72d60d42feb9b4148f50",
+    "/gdpr-transparency/open-sans-v15-latin-700.148a6749baa5f658a451.eot": "29ac62f8162f60358348d8f80b191736885fdc12",
+    "/gdpr-transparency/open-sans-v15-latin-700.2e00b2635b51ba336b4b.svg": "8338e3159cc9c5ff55cac72674afb7e90118ff19",
+    "/gdpr-transparency/open-sans-v15-latin-700.623e3205570002af47fc.woff": "b5f79d1934da79c8a4ba381092dad82ffb0582cb",
+    "/gdpr-transparency/open-sans-v15-latin-700.7e08cc656863d52bcb5c.ttf": "f6e1c78441d4ca2ef589ce79e48d3dbf9dca9a0d",
+    "/gdpr-transparency/open-sans-v15-latin-700.d08c09f2f169f4a6edbc.woff2": "5a6a45d6f98752b11ccb7c4f0f6fd7faf18ad1a7",
+    "/gdpr-transparency/open-sans-v15-latin-regular.7aab4c13671282c90669.svg": "4ca4e88a77a4d81138206a10793507cde43e31a8",
+    "/gdpr-transparency/open-sans-v15-latin-regular.9dce7f01715340861bdb.eot": "8bfad53d1b3c94c9e13bdd7c0b6c7d605396d7b4",
+    "/gdpr-transparency/open-sans-v15-latin-regular.bf2d0783515b7d75c35b.woff": "0e92462e402c15295366d912a7b8be303d0257d8",
+    "/gdpr-transparency/open-sans-v15-latin-regular.c045b73d86803686f4cd.ttf": "92d652578c531e2c3d9db4622584f6a1ab2c225a",
+    "/gdpr-transparency/open-sans-v15-latin-regular.cffb686d7d2f4682df83.woff2": "2c07a9656f1e38da408f20f1cf11581a15cbd7a2",
+    "/gdpr-transparency/password-meter.d59e6dc2616c53ce8e77.png": "e0e101bd2a1cbda41398b48a4ab1792d89cb7334",
+    "/gdpr-transparency/polyfills-es2015.08024755fe2d706d42ca.js": "90fb474e1a7d87bd57bc8a95fb3fd361b919d815",
+    "/gdpr-transparency/polyfills-es5.f4c497f5736cc6c66627.js": "694bec1ff7b951f42234bb9055ea01d016f0a7ac",
+    "/gdpr-transparency/primeicons.2d2afb2719a1ee903e57.eot": "3a564ee7b180527eeba74f3dccfa6f779fcc48ab",
+    "/gdpr-transparency/primeicons.66ee0deb739ca71f0ecd.woff": "c4b44a9b0bc025f62101936b37de1977cd25e3fd",
+    "/gdpr-transparency/primeicons.df0140f8e79ecfeffaf8.ttf": "5695d34fc4ebc0bbd2fcb0babe238c3023638a7d",
+    "/gdpr-transparency/primeicons.e5e0e94474d5fd92e7e8.svg": "98255677416ed656903e9190e976c00fb2ac862d",
+    "/gdpr-transparency/runtime-es2015.b2049804e4bc9cb1d99d.js": "3d2a7479862d67dd268ca419f444c13b4c9d96fe",
+    "/gdpr-transparency/runtime-es5.b2049804e4bc9cb1d99d.js": "3d2a7479862d67dd268ca419f444c13b4c9d96fe",
+    "/gdpr-transparency/styles.6e9642e69d7af92026db.css": "a6915ad7e8efaef984d1b8d36b4acdb17c89e81d"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ]
+}
