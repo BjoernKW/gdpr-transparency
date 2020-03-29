@@ -30,5 +30,7 @@
   "operationSuccessful": "Operation successful",
   "dataImported": "Data has been imported. The app will reload now.",
   "operationFailed": "Operation failed",
-  "dataCouldNotBeImported": "Data could not be imported."
+  "dataCouldNotBeImported": "Data could not be imported.",
+  "entrySaved": "Entry has been saved.",
+  "entryDeleted": "Entry has been deleted."
 }
