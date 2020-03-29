@@ -21,5 +21,7 @@
   "confirmation": "Bestätigung",
   "yes": "Ja",
   "no": "Nein",
-  "id": "ID"
+  "id": "ID",
+  "exportData": "Export data",
+  "importData": "Import data"
 }

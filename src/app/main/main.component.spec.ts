@@ -9,6 +9,7 @@ import { MeasuresComponent } from "../measures/measures.component";
 import { ReactiveFormsModule } from "@angular/forms";
 import { DataImportExportComponent } from "../data-import-export/data-import-export.component";
 import { TableModule } from "primeng/table";
+import { ConfirmationService } from "primeng/api";
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -28,6 +29,9 @@ describe('MainComponent', () => {
         TableModule,
         ReactiveFormsModule,
         TranslateModule.forRoot()
+      ],
+      providers: [
+        ConfirmationService
       ]
     })
     .compileComponents();

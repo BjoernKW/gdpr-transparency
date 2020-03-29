@@ -4,6 +4,7 @@ import { MeasuresComponent } from './measures.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
 import { TableModule } from "primeng/table";
+import { ConfirmationService } from "primeng/api";
 
 describe('MeasuresComponent', () => {
   let component: MeasuresComponent;
@@ -16,6 +17,9 @@ describe('MeasuresComponent', () => {
         ReactiveFormsModule,
         TableModule,
         TranslateModule.forRoot()
+      ],
+      providers: [
+        ConfirmationService
       ]
     })
     .compileComponents();

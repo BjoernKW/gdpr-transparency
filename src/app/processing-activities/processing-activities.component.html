@@ -75,11 +75,17 @@
   <button type="submit"
           class="btn btn-primary"
           (click)="save()"
-          [disabled]="form.invalid">{{ 'submit' | translate }}</button>
+          [disabled]="form.invalid">
+    {{ 'submit' | translate }}
+    <fa-icon [icon]="faCheck"></fa-icon>
+  </button>
   &nbsp;
   <button type="reset"
           class="btn btn-secondary"
-          (click)="reset()">{{ 'reset' | translate }}</button>
+          (click)="reset()">
+    {{ 'reset' | translate }}
+    <fa-icon [icon]="faTimes"></fa-icon>
+  </button>
 </form>
 
 <hr>

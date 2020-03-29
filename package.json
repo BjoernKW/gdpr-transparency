@@ -31,7 +31,6 @@
     "bootstrap": "^4.4.1",
     "dexie": "^2.0.4",
     "dexie-export-import": "^1.0.0-rc.1",
-    "downloadjs": "^1.4.7",
     "primeicons": "^2.0.0",
     "primeng": "^9.0.2",
     "rxjs": "~6.5.4",

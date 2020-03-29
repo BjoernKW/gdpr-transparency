@@ -1,1 +1,18 @@
-<p>data-import-export works!</p>
+<button type="button"
+        class="btn btn-success"
+        (click)="exportData()">
+  {{ 'exportData' | translate }}
+  <fa-icon [icon]="faFileExport"></fa-icon>
+</button>
+&nbsp;
+<button type="button"
+        class="btn btn-danger"
+        (click)="fileImport.click()">
+  {{ 'importData' | translate }}
+  <fa-icon [icon]="faFileImport"></fa-icon>
+</button>
+<input #fileImport
+       (change)="importData($event)"
+       hidden
+       type="file"
+       accept=".json, application/json, text.json">

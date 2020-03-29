@@ -60,6 +60,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     TabViewModule,
     TableModule,
     ConfirmDialogModule,
+
     FontAwesomeModule
   ],
   providers: [

@@ -3,8 +3,9 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ProcessingActivityService } from "../processing-activity.service";
 import { ProcessingActivity } from "../model/processing-activity";
 import { TranslateService } from "@ngx-translate/core";
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { ConfirmationService } from "primeng/api";
+
+import { faTrash, faCheck, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-processing-activities',
@@ -21,6 +22,8 @@ export class ProcessingActivitiesComponent implements OnInit {
   loading = false;
 
   faTrash = faTrash;
+  faCheck = faCheck;
+  faTimes = faTimes;
 
   constructor(
     private _formBuilder: FormBuilder,

@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MasterDataService } from "../master-data.service";
 import { MasterData } from "../model/master-data";
 
+import { faCheck } from '@fortawesome/free-solid-svg-icons';
+
 @Component({
   selector: 'app-master-data',
   templateUrl: './master-data.component.html',
@@ -12,6 +14,8 @@ export class MasterDataComponent implements OnInit {
 
   form: FormGroup;
   private _masterData: MasterData;
+
+  faCheck = faCheck;
 
   constructor(
     private _formBuilder: FormBuilder,

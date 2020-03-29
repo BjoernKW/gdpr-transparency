@@ -21,5 +21,7 @@
   "confirmation": "Confirmation",
   "yes": "Yes",
   "no": "No",
-  "id": "ID"
+  "id": "ID",
+  "exportData": "Daten exportieren",
+  "importData": "Daten importieren"
 }

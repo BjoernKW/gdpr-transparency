@@ -26,5 +26,8 @@
            [placeholder]="'address' | translate"
            required>
   </div>
-  <button type="submit" class="btn btn-primary" (click)="save()">{{ 'submit' | translate }}</button>
+  <button type="submit" class="btn btn-primary" (click)="save()">
+    {{ 'submit' | translate }}
+    <fa-icon [icon]="faCheck"></fa-icon>
+  </button>
 </form>
