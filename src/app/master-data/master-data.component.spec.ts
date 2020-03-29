@@ -4,6 +4,8 @@ import { MasterDataComponent } from './master-data.component';
 import { ReactiveFormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { ToastModule } from "primeng/toast";
+import { MessageService } from "primeng/api";
 
 describe('MasterDataComponent', () => {
   let component: MasterDataComponent;
@@ -11,11 +13,15 @@ describe('MasterDataComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MasterDataComponent ],
+      declarations: [MasterDataComponent],
       imports: [
         ReactiveFormsModule,
         TranslateModule.forRoot(),
-        FontAwesomeModule
+        FontAwesomeModule,
+        ToastModule
+      ],
+      providers: [
+        MessageService
       ]
     })
     .compileComponents();

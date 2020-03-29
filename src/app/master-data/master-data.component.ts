@@ -4,6 +4,8 @@ import { MasterDataService } from "../master-data.service";
 import { MasterData } from "../model/master-data";
 
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
+import { MessageService } from "primeng/api";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-master-data',
@@ -19,7 +21,9 @@ export class MasterDataComponent implements OnInit {
 
   constructor(
     private _formBuilder: FormBuilder,
-    private _masterDataService: MasterDataService
+    private _masterDataService: MasterDataService,
+    private _translateService: TranslateService,
+    private _messageService: MessageService
   ) {
   }
 
@@ -52,5 +56,18 @@ export class MasterDataComponent implements OnInit {
     } else {
       this._masterDataService.add(this.form.value);
     }
+
+    this._translateService.get(
+      [
+        'operationSuccessful',
+        'entrySaved'
+      ]).subscribe(translations => {
+        this._messageService.add({
+          severity: 'success',
+          summary: translations['operationSuccessful'],
+          detail: translations['entrySaved']
+        });
+      }
+    );
   }
 }

@@ -30,5 +30,7 @@
   "operationSuccessful": "Aktion erfolgreich",
   "dataImported": "Daten wurden importiert. Die Anwendung wird nun neu geladen.",
   "operationFailed": "Aktion fehlgeschlagen",
-  "dataCouldNotBeImported": "Daten konnten nicht importiert werden."
+  "dataCouldNotBeImported": "Daten konnten nicht importiert werden.",
+  "entrySaved": "Eintrag wurde gespeichert.",
+  "entryDeleted": "Eintrag wurde gelöscht."
 }

@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MeasureService } from "../measure.service";
-import { ConfirmationService } from "primeng/api";
+import { ConfirmationService, MessageService } from "primeng/api";
 
 import { faCheck, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from "@ngx-translate/core";
@@ -32,7 +32,8 @@ export class MeasuresComponent implements OnInit, OnDestroy {
     private _formBuilder: FormBuilder,
     private _measureService: MeasureService,
     private _confirmationService: ConfirmationService,
-    private _translateService: TranslateService
+    private _translateService: TranslateService,
+    private _messageService: MessageService
   ) {
   }
 
@@ -73,11 +74,41 @@ export class MeasuresComponent implements OnInit, OnDestroy {
     if (this.selectedMeasure) {
       this._measureService
         .update(this.selectedMeasure.id, this.form.value)
-        .then(() => this.loadList());
+        .then(() => {
+          this._translateService.get(
+            [
+              'operationSuccessful',
+              'entrySaved'
+            ]).subscribe(translations => {
+              this._messageService.add({
+                severity: 'success',
+                summary: translations['operationSuccessful'],
+                detail: translations['entrySaved']
+              });
+            }
+          );
+
+          this.loadList();
+        });
     } else {
       this._measureService
         .add(this.form.value)
-        .then(() => this.loadList());
+        .then(() => {
+          this._translateService.get(
+            [
+              'operationSuccessful',
+              'entrySaved'
+            ]).subscribe(translations => {
+              this._messageService.add({
+                severity: 'success',
+                summary: translations['operationSuccessful'],
+                detail: translations['entrySaved']
+              });
+            }
+          );
+
+          this.loadList()
+        });
     }
   }
 
@@ -96,7 +127,22 @@ export class MeasuresComponent implements OnInit, OnDestroy {
         accept: () => {
           this._measureService
             .remove(id)
-            .then(() => this.loadList());
+            .then(() => {
+              this._translateService.get(
+                [
+                  'operationSuccessful',
+                  'entryDeleted'
+                ]).subscribe(translations => {
+                  this._messageService.add({
+                    severity: 'error',
+                    summary: translations['operationSuccessful'],
+                    detail: translations['entryDeleted']
+                  });
+                }
+              );
+
+              this.loadList();
+            });
         },
         reject: () => {
           this._confirmationService.close();

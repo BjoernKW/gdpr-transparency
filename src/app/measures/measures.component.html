@@ -65,10 +65,16 @@
                pTemplate="body">
     <tr [pSelectableRow]="rowData">
       <td *ngFor="let column of columns">
-        <span *ngIf="column.field === 'value'">
+        <span *ngIf="column.field === 'value'" class="do-not-print">
           <p-inputSwitch [ngModel]="rowData[column.field]"
                          disabled
                          readonly></p-inputSwitch>
+        </span>
+        <span *ngIf="column.field === 'value'" class="print">
+          <input [checked]="rowData[column.field]"
+                 disabled
+                 readonly
+                 type="checkbox">
         </span>
         <span *ngIf="column.field !== 'value'">
           {{ rowData[column.field] }}

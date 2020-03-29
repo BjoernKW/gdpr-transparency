@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { ProcessingActivityService } from "../processing-activity.service";
 import { ProcessingActivity } from "../model/processing-activity";
 import { TranslateService } from "@ngx-translate/core";
-import { ConfirmationService } from "primeng/api";
+import { ConfirmationService, MessageService } from "primeng/api";
 
 import { faCheck, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from "rxjs";
@@ -32,7 +32,8 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
     private _formBuilder: FormBuilder,
     private _processingActivityService: ProcessingActivityService,
     private _confirmationService: ConfirmationService,
-    private _translateService: TranslateService
+    private _translateService: TranslateService,
+    private _messageService: MessageService
   ) {
   }
 
@@ -88,11 +89,41 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
     if (this.selectedProcessingActivity) {
       this._processingActivityService
         .update(this.selectedProcessingActivity.id, this.form.value)
-        .then(() => this.loadList());
+        .then(() => {
+          this._translateService.get(
+            [
+              'operationSuccessful',
+              'entrySaved'
+            ]).subscribe(translations => {
+              this._messageService.add({
+                severity: 'success',
+                summary: translations['operationSuccessful'],
+                detail: translations['entrySaved']
+              });
+            }
+          );
+
+          this.loadList();
+        });
     } else {
       this._processingActivityService
         .add(this.form.value)
-        .then(() => this.loadList());
+        .then(() => {
+          this._translateService.get(
+            [
+              'operationSuccessful',
+              'entrySaved'
+            ]).subscribe(translations => {
+              this._messageService.add({
+                severity: 'success',
+                summary: translations['operationSuccessful'],
+                detail: translations['entrySaved']
+              });
+            }
+          );
+
+          this.loadList();
+        });
     }
   }
 
@@ -111,7 +142,22 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
         accept: () => {
           this._processingActivityService
             .remove(id)
-            .then(() => this.loadList());
+            .then(() => {
+              this._translateService.get(
+                [
+                  'operationSuccessful',
+                  'entryDeleted'
+                ]).subscribe(translations => {
+                  this._messageService.add({
+                    severity: 'error',
+                    summary: translations['operationSuccessful'],
+                    detail: translations['entryDeleted']
+                  });
+                }
+              );
+
+              this.loadList();
+            });
         },
         reject: () => {
           this._confirmationService.close();
