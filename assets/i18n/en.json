@@ -28,9 +28,10 @@
   "exportData": "Export data",
   "importData": "import data",
   "operationSuccessful": "Operation successful",
-  "dataImported": "Data has been imported. The app will reload now.",
+  "dataExported": "Your data has been exported.",
+  "dataImported": "The data has been imported. The app will reload now.",
   "operationFailed": "Operation failed",
-  "dataCouldNotBeImported": "Data could not be imported.",
-  "entrySaved": "Entry has been saved.",
-  "entryDeleted": "Entry has been deleted."
+  "dataCouldNotBeImported": "The data could not be imported.",
+  "entrySaved": "The entry has been saved.",
+  "entryDeleted": "The entry has been deleted."
 }

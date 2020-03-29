@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1585491545998,
+  "timestamp": 1585492004154,
   "index": "/gdpr-transparency/index.html",
   "assetGroups": [
     {
@@ -10,8 +10,8 @@
       "urls": [
         "/gdpr-transparency/favicon.ico",
         "/gdpr-transparency/index.html",
-        "/gdpr-transparency/main-es2015.c3b737fa929bb87068d0.js",
-        "/gdpr-transparency/main-es5.c3b737fa929bb87068d0.js",
+        "/gdpr-transparency/main-es2015.dac8049c454f36c32155.js",
+        "/gdpr-transparency/main-es5.dac8049c454f36c32155.js",
         "/gdpr-transparency/manifest.webmanifest",
         "/gdpr-transparency/polyfills-es2015.08024755fe2d706d42ca.js",
         "/gdpr-transparency/polyfills-es5.f4c497f5736cc6c66627.js",
@@ -66,8 +66,8 @@
   ],
   "dataGroups": [],
   "hashTable": {
-    "/gdpr-transparency/assets/i18n/de.json": "cbf614cacc80dfb2f5308b56c30ba0402586e6af",
-    "/gdpr-transparency/assets/i18n/en.json": "8a6bfd25b0f9ae3e85a50d58b727ab98b3679c55",
+    "/gdpr-transparency/assets/i18n/de.json": "a11d60a63f855de9029c3192e88de01f30b3cb47",
+    "/gdpr-transparency/assets/i18n/en.json": "ac5ed4f4b0a0440a6449ceb91406223580cc99d5",
     "/gdpr-transparency/assets/icons/icon-128x128.png": "890e17c59404c5993d64a2174ece839549824249",
     "/gdpr-transparency/assets/icons/icon-144x144.png": "e2f6c50cdb690c46e81b09aae43bf54e5a26458e",
     "/gdpr-transparency/assets/icons/icon-152x152.png": "e50a312669a14e6d7d55f16cd50bbfab68dcecbd",
@@ -79,11 +79,11 @@
     "/gdpr-transparency/color.c7a33805ffda0d32bd2a.png": "ff4c4bcb2207891b292f544edb4da9d2df5d45cf",
     "/gdpr-transparency/favicon.ico": "bbe23fae49ff2c1f7ba21308286d95d516eb96f7",
     "/gdpr-transparency/hue.0614c27197fc3ce572e1.png": "f81ae627637a684614aa726e206c73ce099a01fd",
-    "/gdpr-transparency/index.html": "702a5825dc024a372560e2b2aa6472ff3d1fbdbd",
+    "/gdpr-transparency/index.html": "4f5b8bfe12f5d7b16dd8ac7a79a85a74d2886f26",
     "/gdpr-transparency/line.567f57385ea3dde2c9ae.gif": "a2af20bd160ca9cfc2c85527663ff7429267519a",
     "/gdpr-transparency/loading.8732a6660b528fadfaeb.gif": "72998a116936156dc7cace0606dab499fe4f3ce8",
-    "/gdpr-transparency/main-es2015.c3b737fa929bb87068d0.js": "26ce484e30ff7f7f4579d2b20d35f4124cc0b968",
-    "/gdpr-transparency/main-es5.c3b737fa929bb87068d0.js": "f8ee3fa3df39172465f304767d0700c7379c1426",
+    "/gdpr-transparency/main-es2015.dac8049c454f36c32155.js": "c7623d25536134efbb85b51ff736797c265d4738",
+    "/gdpr-transparency/main-es5.dac8049c454f36c32155.js": "62e5b08d6f3a7f52f4d475fdd7dbce350fe51108",
     "/gdpr-transparency/manifest.webmanifest": "4f7b4f0b84460daeeeae6128618434b737a4806b",
     "/gdpr-transparency/open-sans-v15-latin-300.177cc92d2e8027712a8c.ttf": "861b3593521709d9fa8a8efb6f40817dd7fa9337",
     "/gdpr-transparency/open-sans-v15-latin-300.27ef0b062b2e221df16f.svg": "1183c2939f6cad1ac69dc16d4a0b943d546e4b2e",
