@@ -14,5 +14,14 @@
   "thirdCountryDataTransfers": "Datenübermittlungen in Drittländer ",
   "dataDeletionPeriod": "Löschungsfrist",
   "resourcesUsed": "Verwendete Ressourcen",
-  "submit": "Abschicken"
+  "submit": "Abschicken",
+  "reset": "Zurücksetzen",
+  "delete": "Löschen",
+  "areYouSure": "Sind Sie sicher, dass Sie diese Aktion durchführen wollen?",
+  "confirmation": "Bestätigung",
+  "yes": "Ja",
+  "no": "Nein",
+  "id": "ID",
+  "exportData": "Export data",
+  "importData": "Import data"
 }
