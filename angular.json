@@ -26,7 +26,9 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/manifest.webmanifest"
+              "src/manifest.webmanifest",
+              "src/assets/i18n/de.json",
+              "src/assets/i18n/en.json"
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
