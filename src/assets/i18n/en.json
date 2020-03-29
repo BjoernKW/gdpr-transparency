@@ -22,6 +22,10 @@
   "yes": "Yes",
   "no": "No",
   "id": "ID",
-  "exportData": "Daten exportieren",
-  "importData": "Daten importieren"
+  "exportData": "Export data",
+  "importData": "import data",
+  "operationSuccessful": "Operation successful",
+  "dataImported": "Data has been imported. The app will reload now.",
+  "operationFailed": "Operation failed",
+  "dataCouldNotBeImported": "Data could not be imported."
 }

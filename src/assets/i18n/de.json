@@ -22,6 +22,10 @@
   "yes": "Ja",
   "no": "Nein",
   "id": "ID",
-  "exportData": "Export data",
-  "importData": "Import data"
+  "exportData": "Daten exportieren",
+  "importData": "Daten importieren",
+  "operationSuccessful": "Aktion erfolgreich",
+  "dataImported": "Daten wurden importiert. Die Anwendung wird nun neu geladen.",
+  "operationFailed": "Aktion fehlgeschlagen",
+  "dataCouldNotBeImported": "Daten konnten nicht importiert werden."
 }

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 
 import Dexie from 'dexie';
-import { exportDB, importDB } from 'dexie-export-import';
+import { exportDB, importInto } from 'dexie-export-import';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +17,10 @@ export class DexieService extends Dexie {
   }
 
   exportDatabase(): Promise<any> {
-    return exportDB(this, { prettyJson: true });
+    return exportDB(this, {prettyJson: true});
   }
 
-  importDatabase(data: string) {
-    importDB(data);
+  importDatabase(file: File): Promise<any> {
+    return importInto(this, file);
   }
 }

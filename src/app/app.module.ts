@@ -24,7 +24,8 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TableModule } from "primeng/table";
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ConfirmationService } from "primeng/api";
+import { ConfirmationService, MessageService } from "primeng/api";
+import { ToastModule } from 'primeng/toast';
 
 registerLocaleData(localeEN);
 registerLocaleData(localeDE);
@@ -60,10 +61,12 @@ export function HttpLoaderFactory(http: HttpClient) {
     TabViewModule,
     TableModule,
     ConfirmDialogModule,
+    ToastModule,
     FontAwesomeModule
   ],
   providers: [
-    ConfirmationService
+    ConfirmationService,
+    MessageService
   ],
   bootstrap: [AppComponent]
 })

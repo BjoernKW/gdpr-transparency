@@ -27,14 +27,26 @@ export class MasterDataService {
   }
 
   add(data) {
+    this._masterDataChanged.next(data);
+
     return this.table.add(data);
   }
 
   update(id: number, data) {
+    this._masterDataChanged.next(data);
+
     return this.table.update(id, data);
   }
 
   remove(id: number) {
+    this._masterDataChanged.next(null);
+
     return this.table.delete(id);
+  }
+
+  clear() {
+    this._masterDataChanged.next(null);
+
+    return this.table.clear();
   }
 }

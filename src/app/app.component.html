@@ -13,6 +13,7 @@
 </header>
 <hr>
 <div class="container-fluid">
+  <p-toast></p-toast>
   <p-confirmDialog #confirmDialog header="{{ 'confirmation' | translate }}" icon="pi pi-exclamation-triangle">
     <p-footer>
       <button type="button" pButton icon="pi pi-check" label="{{ 'yes' | translate }}" (click)="confirmDialog.accept()"></button>

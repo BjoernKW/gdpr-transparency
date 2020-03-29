@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 
-import { faFileImport, faFileExport } from '@fortawesome/free-solid-svg-icons';
+import { faFileExport, faFileImport } from '@fortawesome/free-solid-svg-icons';
 import { DexieService } from '../dexie.service';
+import { MasterDataService } from "../master-data.service";
+import { ProcessingActivityService } from "../processing-activity.service";
+import { MeasureService } from "../measure.service";
+import { ConfirmationService, MessageService } from "primeng/api";
+import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-data-import-export',
@@ -13,7 +18,16 @@ export class DataImportExportComponent implements OnInit {
   faFileImport = faFileImport;
   faFileExport = faFileExport;
 
-  constructor(private _dexieService: DexieService) { }
+  constructor(
+    private _dexieService: DexieService,
+    private _masterDataService: MasterDataService,
+    private _processingActivityService: ProcessingActivityService,
+    private _measureService: MeasureService,
+    private _confirmationService: ConfirmationService,
+    private _translateService: TranslateService,
+    private _messageService: MessageService
+  ) {
+  }
 
   ngOnInit(): void {
   }
@@ -27,15 +41,44 @@ export class DataImportExportComponent implements OnInit {
   }
 
   importData($event: Event) {
-    const importFile = $event.target['files'][0] as File;
-    if (importFile) {
-      var reader = new FileReader();
-      reader.readAsText(importFile, "UTF-8");
-      const self = this;
-      reader.onload = function (event) {
-        self._dexieService.importDatabase(event.target.result as string);
-      };
-    }
+    this._translateService.get(
+      [
+        'areYouSure',
+        'operationSuccessful',
+        'dataImported',
+        'operationFailed',
+        'dataCouldNotBeImported'
+      ]).subscribe(translations =>
+      this._confirmationService.confirm({
+        message: translations['areYouSure'],
+        accept: () => {
+          const importFile = $event.target['files'][0] as File;
+          if (importFile) {
+            this._masterDataService.clear()
+              .then(() => this._processingActivityService.clear())
+              .then(() => this._measureService.clear())
+              .then(() => this._dexieService.importDatabase(importFile))
+              .then(() => {
+                this._messageService.add({
+                  severity: 'success',
+                  summary: translations['operationSuccessful'],
+                  detail: translations['dataImported']
+                });
+                setInterval(() => location.reload(), 2000);
+              })
+              .catch(() => this._messageService.add({
+                severity: 'success',
+                summary: translations['operationFailed'],
+                detail: translations['dataCouldNotBeImported']
+              }));
+          }
+        },
+        reject: () => {
+          this._confirmationService.close();
+        }
+      })
+    );
+
   }
 
   private static triggerDownload(dataURL: string, filename: string) {

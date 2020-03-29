@@ -2,11 +2,15 @@ import { Injectable } from '@angular/core';
 import Dexie from "dexie";
 import { DexieService } from "./dexie.service";
 import { ProcessingActivity } from "./model/processing-activity";
+import { BehaviorSubject } from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProcessingActivityService {
+
+  private _processingActivityChanged = new BehaviorSubject<ProcessingActivity>(null);
+  processingActivityChanged$ = this._processingActivityChanged.asObservable();
 
   table: Dexie.Table<ProcessingActivity, number>;
 
@@ -23,14 +27,26 @@ export class ProcessingActivityService {
   }
 
   add(data) {
+    this._processingActivityChanged.next(data);
+
     return this.table.add(data);
   }
 
   update(id: number, data) {
+    this._processingActivityChanged.next(data);
+
     return this.table.update(id, data);
   }
 
   remove(id: number) {
+    this._processingActivityChanged.next(null);
+
     return this.table.delete(id);
+  }
+
+  clear() {
+    this._processingActivityChanged.next(null);
+
+    return this.table.clear();
   }
 }
