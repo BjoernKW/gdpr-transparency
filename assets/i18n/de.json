@@ -6,6 +6,9 @@
   "recordOfProcessingActivities": "Verzeichnis von Verarbeitungstätigkeiten",
   "technicalAndOrganisationalMeasures": "Technische und organisatorische Maßnahmen",
   "dataImportExport": "Daten Import & Export",
+  "name": "Name",
+  "category": "Kategorie",
+  "value": "Wert",
   "description": "Beschreibung",
   "personResponsible": "Verantwortlicher",
   "purpose": "Zwecke",
@@ -22,6 +25,10 @@
   "yes": "Ja",
   "no": "Nein",
   "id": "ID",
-  "exportData": "Export data",
-  "importData": "Import data"
+  "exportData": "Daten exportieren",
+  "importData": "Daten importieren",
+  "operationSuccessful": "Aktion erfolgreich",
+  "dataImported": "Daten wurden importiert. Die Anwendung wird nun neu geladen.",
+  "operationFailed": "Aktion fehlgeschlagen",
+  "dataCouldNotBeImported": "Daten konnten nicht importiert werden."
 }

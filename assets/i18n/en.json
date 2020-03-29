@@ -6,6 +6,9 @@
   "recordOfProcessingActivities": "Record of processing activities",
   "technicalAndOrganisationalMeasures": "Technical and organisational measures",
   "dataImportExport": "Data Import & Export",
+  "name": "Name",
+  "category": "Category",
+  "value": "Value",
   "description": "Description",
   "personResponsible": "Person responsible",
   "purpose": "Purpose",
@@ -22,6 +25,10 @@
   "yes": "Yes",
   "no": "No",
   "id": "ID",
-  "exportData": "Daten exportieren",
-  "importData": "Daten importieren"
+  "exportData": "Export data",
+  "importData": "import data",
+  "operationSuccessful": "Operation successful",
+  "dataImported": "Data has been imported. The app will reload now.",
+  "operationFailed": "Operation failed",
+  "dataCouldNotBeImported": "Data could not be imported."
 }
