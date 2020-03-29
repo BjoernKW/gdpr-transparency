@@ -1,10 +1,11 @@
 # GDPR Transparency
 
-**GDPR Transparency** is a web app for managing the record of processing activities and technical and organisational measures as required by GDPR (see https://gdpr-info.eu/art-30-gdpr/ ).
+**GDPR Transparency** is a web app for managing the record of processing activities (see https://gdpr-info.eu/art-30-gdpr/ )
+and technical and organisational measures (see https://gdpr-info.eu/art-32-gdpr/ ) as required by GDPR.
 
 ## Usage
 
-Go to https://github.com/BjoernKW/gdpr-transparency .
+Go to https://bjoernkw.github.io/gdpr-transparency/ .
 
 ## Development
 
@@ -26,8 +27,11 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 * [Angular](https://angular.io/)
 * [Bootstrap](https://getbootstrap.com)
+* [Dexie.js](https://dexie.org/)
+* [IndexedDB](https://developer.mozilla.org/en-US/docs/Web/API/IndexedDB_API)
 * JavaScript
 * [PrimeNG](https://www.primefaces.org/primeng/#/)
+* [PWA](https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps)
 
 ## License
 
