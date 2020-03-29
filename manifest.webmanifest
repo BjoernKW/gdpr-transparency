@@ -1,7 +1,7 @@
 {
-  "name": "gdpr-transparency",
-  "short_name": "gdpr-transparency",
-  "theme_color": "#1976d2",
+  "name": "GDPR Transparency",
+  "short_name": "GDPR Transparency",
+  "theme_color": "#bc0404",
   "background_color": "#fafafa",
   "display": "standalone",
   "scope": "./",
