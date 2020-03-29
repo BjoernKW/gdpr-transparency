@@ -10,6 +10,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 import { DataImportExportComponent } from "../data-import-export/data-import-export.component";
 import { TableModule } from "primeng/table";
 import { ConfirmationService } from "primeng/api";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -28,7 +29,8 @@ describe('MainComponent', () => {
         TabViewModule,
         TableModule,
         ReactiveFormsModule,
-        TranslateModule.forRoot()
+        TranslateModule.forRoot(),
+        FontAwesomeModule
       ],
       providers: [
         ConfirmationService

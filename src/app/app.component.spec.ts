@@ -1,9 +1,10 @@
-import { TestBed, async } from '@angular/core/testing';
+import { async, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { TranslateModule } from "@ngx-translate/core";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
 import { ConfirmationService } from "primeng/api";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -11,7 +12,8 @@ describe('AppComponent', () => {
       imports: [
         RouterTestingModule,
         TranslateModule.forRoot(),
-        ConfirmDialogModule
+        ConfirmDialogModule,
+        FontAwesomeModule
       ],
       declarations: [
         AppComponent

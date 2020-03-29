@@ -1,6 +1,8 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DataImportExportComponent } from './data-import-export.component';
+import { TranslateModule } from "@ngx-translate/core";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 
 describe('DataImportExportComponent', () => {
   let component: DataImportExportComponent;
@@ -8,7 +10,11 @@ describe('DataImportExportComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DataImportExportComponent ]
+      declarations: [DataImportExportComponent],
+      imports: [
+        TranslateModule.forRoot(),
+        FontAwesomeModule
+      ]
     })
     .compileComponents();
   }));
