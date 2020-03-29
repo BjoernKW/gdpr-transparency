@@ -35,7 +35,19 @@ export class DataImportExportComponent implements OnInit {
   exportData() {
     this._dexieService.exportDatabase().then(blob => {
       blob.text().then(value => {
-        DataImportExportComponent.triggerDownload("data:application/json;charset=utf-8," + encodeURIComponent(value), "gdpr-transparency-export.json")
+        DataImportExportComponent.triggerDownload("data:application/json;charset=utf-8," + encodeURIComponent(value), "gdpr-transparency-export.json");
+
+        this._translateService.get(
+          [
+            'operationSuccessful',
+            'dataExported'
+          ]).subscribe(translations =>
+          this._messageService.add({
+            severity: 'success',
+            summary: translations['operationSuccessful'],
+            detail: translations['dataExported']
+          })
+        );
       });
     });
   }

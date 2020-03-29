@@ -28,9 +28,10 @@
   "exportData": "Daten exportieren",
   "importData": "Daten importieren",
   "operationSuccessful": "Aktion erfolgreich",
-  "dataImported": "Daten wurden importiert. Die Anwendung wird nun neu geladen.",
+  "dataExported": "Ihre Daten wurden exportiert.",
+  "dataImported": "Die Daten wurden importiert. Die Anwendung wird nun neu geladen.",
   "operationFailed": "Aktion fehlgeschlagen",
-  "dataCouldNotBeImported": "Daten konnten nicht importiert werden.",
-  "entrySaved": "Eintrag wurde gespeichert.",
-  "entryDeleted": "Eintrag wurde gelöscht."
+  "dataCouldNotBeImported": "Die Daten konnten nicht importiert werden.",
+  "entrySaved": "Der Eintrag wurde gespeichert.",
+  "entryDeleted": "Der Eintrag wurde gelöscht."
 }
