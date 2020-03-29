@@ -8,7 +8,7 @@ import { environment } from '../environments/environment';
 
 import { TabViewModule } from 'primeng/tabview';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MainComponent } from './main/main.component';
 import { ProcessingActivitiesComponent } from './processing-activities/processing-activities.component';
 import { MeasuresComponent } from './measures/measures.component';
@@ -26,6 +26,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ConfirmationService, MessageService } from "primeng/api";
 import { ToastModule } from 'primeng/toast';
+import { InputSwitchModule } from 'primeng/inputswitch';
 
 registerLocaleData(localeEN);
 registerLocaleData(localeDE);
@@ -46,9 +47,10 @@ export function HttpLoaderFactory(http: HttpClient) {
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production }),
+    ServiceWorkerModule.register('ngsw-worker.js', {enabled: environment.production}),
     HttpClientModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
@@ -62,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     TableModule,
     ConfirmDialogModule,
     ToastModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    InputSwitchModule
   ],
   providers: [
     ConfirmationService,

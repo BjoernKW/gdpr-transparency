@@ -1,1 +1,85 @@
-<form [formGroup]="form"></form>
+<form [formGroup]="form"
+      class="do-not-print">
+  <div class="form-group">
+    <label for="category">{{ 'category' | translate }}</label>
+    <input [placeholder]="'category' | translate"
+           class="form-control"
+           formControlName="category"
+           id="category"
+           required
+           type="text">
+  </div>
+  <div class="form-group">
+    <label for="name">{{ 'name' | translate }}</label>
+    <input [placeholder]="'name' | translate"
+           class="form-control"
+           formControlName="name"
+           id="name"
+           required
+           type="text">
+  </div>
+  <div class="form-group form-check">
+    <p-inputSwitch formControlName="value"
+                   id="value"></p-inputSwitch>
+  </div>
+  <button (click)="save()"
+          [disabled]="form.invalid"
+          class="btn btn-primary"
+          type="submit">
+    {{ 'submit' | translate }}
+    <fa-icon [icon]="faCheck"></fa-icon>
+  </button>
+  &nbsp;
+  <button (click)="reset()"
+          class="btn btn-secondary"
+          type="reset">
+    {{ 'reset' | translate }}
+    <fa-icon [icon]="faTimes"></fa-icon>
+  </button>
+</form>
+
+<hr>
+
+<p-table (onLazyLoad)="loadList()"
+         (onRowSelect)="onRowSelect()"
+         [(selection)]="selectedMeasure"
+         [columns]="columns"
+         [lazy]="true"
+         [loading]="loading"
+         [totalRecords]="measures ? measures.length : 0"
+         [value]="measures"
+         dataKey="name"
+         selectionMode="single">
+  <ng-template let-columns
+               pTemplate="header">
+    <tr>
+      <th *ngFor="let column of columns" scope="col">
+        {{ column.header }}
+      </th>
+      <th class="do-not-print"
+          scope="col"></th>
+    </tr>
+  </ng-template>
+  <ng-template let-columns="columns"
+               let-rowData
+               pTemplate="body">
+    <tr [pSelectableRow]="rowData">
+      <td *ngFor="let column of columns">
+        <span *ngIf="column.field === 'value'">
+          <p-inputSwitch [ngModel]="rowData[column.field]"
+                         disabled
+                         readonly></p-inputSwitch>
+        </span>
+        <span *ngIf="column.field !== 'value'">
+          {{ rowData[column.field] }}
+        </span>
+      </td>
+      <td class="do-not-print">
+        <button (click)="delete(rowData['id'])" class="btn btn-danger" type="submit">
+          {{ 'delete' | translate }}
+          <fa-icon [icon]="faTrash"></fa-icon>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
