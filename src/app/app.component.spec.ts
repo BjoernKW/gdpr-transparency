@@ -3,8 +3,9 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { TranslateModule } from "@ngx-translate/core";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
-import { ConfirmationService } from "primeng/api";
+import { ConfirmationService, MessageService } from "primeng/api";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { ToastModule } from "primeng/toast";
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -13,13 +14,15 @@ describe('AppComponent', () => {
         RouterTestingModule,
         TranslateModule.forRoot(),
         ConfirmDialogModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        ToastModule
       ],
       declarations: [
         AppComponent
       ],
       providers: [
-        ConfirmationService
+        ConfirmationService,
+        MessageService
       ]
     }).compileComponents();
   }));

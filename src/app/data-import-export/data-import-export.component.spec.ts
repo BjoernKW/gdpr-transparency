@@ -3,6 +3,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DataImportExportComponent } from './data-import-export.component';
 import { TranslateModule } from "@ngx-translate/core";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { ToastModule } from "primeng/toast";
+import { ConfirmDialogModule } from "primeng/confirmdialog";
+import { ConfirmationService, MessageService } from "primeng/api"
+import { InputSwitchModule } from "primeng/inputswitch";
 
 describe('DataImportExportComponent', () => {
   let component: DataImportExportComponent;
@@ -13,7 +17,14 @@ describe('DataImportExportComponent', () => {
       declarations: [DataImportExportComponent],
       imports: [
         TranslateModule.forRoot(),
-        FontAwesomeModule
+        FontAwesomeModule,
+        ConfirmDialogModule,
+        ToastModule,
+        InputSwitchModule
+      ],
+      providers: [
+        ConfirmationService,
+        MessageService
       ]
     })
     .compileComponents();

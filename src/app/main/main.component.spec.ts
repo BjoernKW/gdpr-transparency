@@ -6,11 +6,14 @@ import { TranslateModule } from "@ngx-translate/core";
 import { MasterDataComponent } from "../master-data/master-data.component";
 import { ProcessingActivitiesComponent } from "../processing-activities/processing-activities.component";
 import { MeasuresComponent } from "../measures/measures.component";
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DataImportExportComponent } from "../data-import-export/data-import-export.component";
 import { TableModule } from "primeng/table";
-import { ConfirmationService } from "primeng/api";
+import { ConfirmationService, MessageService } from "primeng/api";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { ConfirmDialogModule } from "primeng/confirmdialog";
+import { ToastModule } from "primeng/toast";
+import { InputSwitchModule } from "primeng/inputswitch";
 
 describe('MainComponent', () => {
   let component: MainComponent;
@@ -28,12 +31,17 @@ describe('MainComponent', () => {
       imports: [
         TabViewModule,
         TableModule,
+        FormsModule,
         ReactiveFormsModule,
         TranslateModule.forRoot(),
-        FontAwesomeModule
+        FontAwesomeModule,
+        ConfirmDialogModule,
+        ToastModule,
+        InputSwitchModule
       ],
       providers: [
-        ConfirmationService
+        ConfirmationService,
+        MessageService
       ]
     })
     .compileComponents();

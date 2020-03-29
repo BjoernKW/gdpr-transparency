@@ -32,7 +32,7 @@ registerLocaleData(localeEN);
 registerLocaleData(localeDE);
 
 export function HttpLoaderFactory(http: HttpClient) {
-  return environment.production ? new TranslateHttpLoader(http, '/gdpr-transparency/assets/i18n/') : new TranslateHttpLoader(http);
+  return environment.i18nPrefix ? new TranslateHttpLoader(http, environment.i18nPrefix) : new TranslateHttpLoader(http);
 }
 
 @NgModule({

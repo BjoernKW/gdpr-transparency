@@ -1,11 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MeasuresComponent } from './measures.component';
-import { ReactiveFormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { TranslateModule } from "@ngx-translate/core";
 import { TableModule } from "primeng/table";
-import { ConfirmationService } from "primeng/api";
+import { ConfirmationService, MessageService } from "primeng/api";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { InputSwitchModule } from "primeng/inputswitch";
+import { ToastModule } from "primeng/toast";
 
 describe('MeasuresComponent', () => {
   let component: MeasuresComponent;
@@ -13,15 +15,19 @@ describe('MeasuresComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ MeasuresComponent ],
+      declarations: [MeasuresComponent],
       imports: [
+        FormsModule,
         ReactiveFormsModule,
         TableModule,
         TranslateModule.forRoot(),
-        FontAwesomeModule
+        FontAwesomeModule,
+        InputSwitchModule,
+        ToastModule
       ],
       providers: [
-        ConfirmationService
+        ConfirmationService,
+        MessageService
       ]
     })
     .compileComponents();

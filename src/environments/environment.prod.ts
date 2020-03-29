@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  i18nPrefix: '/gdpr-transparency/assets/i18n/'
 };
