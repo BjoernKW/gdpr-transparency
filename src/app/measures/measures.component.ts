@@ -3,10 +3,12 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { MeasureService } from "../measure.service";
 import { ConfirmationService, MessageService } from "primeng/api";
 
-import { faCheck, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { TranslateService } from "@ngx-translate/core";
 import { Subscription } from "rxjs";
 import { Measure } from "../model/measure";
+
+import * as equal from 'fast-deep-equal';
 
 @Component({
   selector: 'app-measures',
@@ -19,14 +21,17 @@ export class MeasuresComponent implements OnInit, OnDestroy {
 
   measures: Measure[];
   selectedMeasure: Measure;
+  changed = false;
   columns: { field: string, header: string }[];
   loading = false;
 
   faTrash = faTrash;
   faCheck = faCheck;
   faTimes = faTimes;
+  faUndo = faUndo;
 
   private _measureSubscription: Subscription;
+  private _formSubscription: Subscription;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -42,6 +47,9 @@ export class MeasuresComponent implements OnInit, OnDestroy {
       category: ['', Validators.required],
       name: ['', Validators.required],
       value: [false]
+    });
+    this._formSubscription = this.form.valueChanges.subscribe(value => {
+      this.changed = !equal(value, this.selectedMeasure);
     });
 
     this._translateService.get(
@@ -67,6 +75,9 @@ export class MeasuresComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     if (this._measureSubscription) {
       this._measureSubscription.unsubscribe();
+    }
+    if (this._formSubscription) {
+      this._formSubscription.unsubscribe();
     }
   }
 
@@ -110,6 +121,8 @@ export class MeasuresComponent implements OnInit, OnDestroy {
           this.loadList()
         });
     }
+
+    this.changed = false;
   }
 
   loadList() {
@@ -152,17 +165,31 @@ export class MeasuresComponent implements OnInit, OnDestroy {
   }
 
   onRowSelect() {
-    this._measureService.get(this.selectedMeasure.id).then(measure => {
-      let processingActivityID = this.selectedMeasure.id;
+    this._measureService.get(this.selectedMeasure.id).then(() => {
+      let measureID = this.selectedMeasure.id;
       delete this.selectedMeasure.id;
 
       this.form.setValue(this.selectedMeasure);
 
-      this.selectedMeasure['id'] = processingActivityID;
+      this.selectedMeasure['id'] = measureID;
     });
+  }
+
+  onRowUnselect() {
+    this.selectedMeasure = null;
+    this.form.reset();
   }
 
   reset() {
     this.selectedMeasure = null;
+  }
+
+  discard() {
+    let measureID = this.selectedMeasure.id;
+    delete this.selectedMeasure.id;
+
+    this.form.setValue(this.selectedMeasure);
+
+    this.selectedMeasure['id'] = measureID;
   }
 }

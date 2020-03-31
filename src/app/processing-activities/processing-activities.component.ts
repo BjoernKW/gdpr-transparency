@@ -5,8 +5,10 @@ import { ProcessingActivity } from "../model/processing-activity";
 import { TranslateService } from "@ngx-translate/core";
 import { ConfirmationService, MessageService } from "primeng/api";
 
-import { faCheck, faTimes, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faCheck, faTimes, faTrash, faUndo } from '@fortawesome/free-solid-svg-icons';
 import { Subscription } from "rxjs";
+
+import * as equal from 'fast-deep-equal';
 
 @Component({
   selector: 'app-processing-activities',
@@ -19,14 +21,17 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 
   processingActivities: ProcessingActivity[];
   selectedProcessingActivity: ProcessingActivity;
+  changed = false;
   columns: { field: string, header: string }[];
   loading = false;
 
   faTrash = faTrash;
   faCheck = faCheck;
   faTimes = faTimes;
+  faUndo = faUndo;
 
   private _processingActivitySubscription: Subscription;
+  private _formSubscription: Subscription;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -47,6 +52,9 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
       thirdCountryDataTransfers: ['', Validators.required],
       dataDeletionPeriod: ['', Validators.required],
       resourcesUsed: ['']
+    });
+    this._formSubscription = this.form.valueChanges.subscribe(value => {
+      this.changed = !equal(value, this.selectedProcessingActivity);
     });
 
     this._translateService.get(
@@ -82,6 +90,9 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     if (this._processingActivitySubscription) {
       this._processingActivitySubscription.unsubscribe();
+    }
+    if (this._formSubscription) {
+      this._formSubscription.unsubscribe();
     }
   }
 
@@ -125,6 +136,8 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
           this.loadList();
         });
     }
+
+    this.changed = false;
   }
 
   loadList() {
@@ -167,7 +180,7 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
   }
 
   onRowSelect() {
-    this._processingActivityService.get(this.selectedProcessingActivity.id).then(processActivity => {
+    this._processingActivityService.get(this.selectedProcessingActivity.id).then(() => {
       let processingActivityID = this.selectedProcessingActivity.id;
       delete this.selectedProcessingActivity.id;
 
@@ -179,5 +192,19 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 
   reset() {
     this.selectedProcessingActivity = null;
+  }
+
+  discard() {
+    let processingActivityID = this.selectedProcessingActivity.id;
+    delete this.selectedProcessingActivity.id;
+
+    this.form.setValue(this.selectedProcessingActivity);
+
+    this.selectedProcessingActivity['id'] = processingActivityID;
+  }
+
+  onRowUnselect() {
+    this.selectedProcessingActivity = null;
+    this.form.reset();
   }
 }

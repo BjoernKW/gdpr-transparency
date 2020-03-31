@@ -76,9 +76,21 @@
           class="btn btn-primary"
           (click)="save()"
           [disabled]="form.invalid">
-    {{ 'submit' | translate }}
+    <span *ngIf="!selectedProcessingActivity">{{ 'create' | translate }}</span>
+    <span *ngIf="selectedProcessingActivity">{{ 'update' | translate }}</span>
+    &nbsp;
     <fa-icon [icon]="faCheck"></fa-icon>
   </button>
+  <span *ngIf="selectedProcessingActivity">
+    &nbsp;
+    <button (click)="discard()"
+            [disabled]="!changed"
+            class="btn btn-warning"
+            type="button">
+      {{ 'discard' | translate }}
+      <fa-icon [icon]="faUndo"></fa-icon>
+    </button>
+  </span>
   &nbsp;
   <button type="reset"
           class="btn btn-secondary"
@@ -99,7 +111,8 @@
          selectionMode="single"
          dataKey="description"
          [(selection)]="selectedProcessingActivity"
-         (onRowSelect)="onRowSelect()">
+         (onRowSelect)="onRowSelect()"
+         (onRowUnselect)="onRowUnselect()">
   <ng-template pTemplate="header"
                let-columns>
     <tr>

@@ -26,9 +26,21 @@
           [disabled]="form.invalid"
           class="btn btn-primary"
           type="submit">
-    {{ 'submit' | translate }}
+    <span *ngIf="!selectedMeasure">{{ 'create' | translate }}</span>
+    <span *ngIf="selectedMeasure">{{ 'update' | translate }}</span>
+    &nbsp;
     <fa-icon [icon]="faCheck"></fa-icon>
   </button>
+  <span *ngIf="selectedMeasure">
+    &nbsp;
+    <button (click)="discard()"
+            [disabled]="!changed"
+            class="btn btn-warning"
+            type="button">
+      {{ 'discard' | translate }}
+      <fa-icon [icon]="faUndo"></fa-icon>
+    </button>
+  </span>
   &nbsp;
   <button (click)="reset()"
           class="btn btn-secondary"
@@ -42,6 +54,7 @@
 
 <p-table (onLazyLoad)="loadList()"
          (onRowSelect)="onRowSelect()"
+         (onRowUnselect)="onRowUnselect()"
          [(selection)]="selectedMeasure"
          [columns]="columns"
          [lazy]="true"

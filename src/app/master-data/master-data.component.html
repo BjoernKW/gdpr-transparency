@@ -30,4 +30,12 @@
     {{ 'submit' | translate }}
     <fa-icon [icon]="faCheck"></fa-icon>
   </button>
+  &nbsp;
+  <button (click)="discard()"
+          [disabled]="!changed"
+          class="btn btn-warning"
+          type="button">
+    {{ 'discard' | translate }}
+    <fa-icon [icon]="faUndo"></fa-icon>
+  </button>
 </form>
