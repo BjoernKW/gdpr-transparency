@@ -2,6 +2,8 @@
 
 [![CircleCI](https://circleci.com/gh/BjoernKW/gdpr-transparency.svg?style=shield)](https://circleci.com/gh/BjoernKW/gdpr-transparency)
 
+Just a test.
+
 **GDPR Transparency** is a web app for managing the record of processing activities (see https://gdpr-info.eu/art-30-gdpr/ )
 and technical and organisational measures (see https://gdpr-info.eu/art-32-gdpr/ ) as required by GDPR.
 
