@@ -8,6 +8,7 @@ on:
 jobs:
   ngxUptodate:
     runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
     steps:
       - name: Updating ng dependencies
         uses: tinesoft/ngx-uptodate@v1.1.1
