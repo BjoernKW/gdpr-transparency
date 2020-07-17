@@ -37,11 +37,15 @@ jobs:
       # run tests!
       - run: xvfb-run -a npm run test -- --watch=false --browsers=ChromeHeadless
 
-      # build
-      - run: npm run build -- --base-href /gdpr-transparency/ --deploy-url /gdpr-transparency/ --prod
+      - when:
+          condition:
+            equal: [ master, << pipeline.git.branch >> ]
+          steps:
+            # build
+            - run: npm run build -- --base-href /gdpr-transparency/ --deploy-url /gdpr-transparency/ --prod
 
-      # deploy
-      - run: npx angular-cli-ghpages --dir=dist/gdpr-transparency --repo=https://GH_TOKEN@github.com/BjoernKW/gdpr-transparency.git --name="BjoernKW" --email=bjoern@bjoernkw.com
+            # deploy
+            - run: npx angular-cli-ghpages --dir=dist/gdpr-transparency --repo=https://GH_TOKEN@github.com/BjoernKW/gdpr-transparency.git --name="BjoernKW" --email=bjoern@bjoernkw.com
 
 workflows:
   build:
@@ -49,4 +53,6 @@ workflows:
       - build:
           filters:
             branches:
-              only: master
+              only:
+                - master
+                - /chore-ng-update-.+/
