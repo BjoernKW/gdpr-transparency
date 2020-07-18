@@ -2,15 +2,22 @@ name: "Angular update"
 
 on:
   schedule:
-    - cron:  '15 14 * * *'
+    - cron:  '30 14 * * *'
 
 jobs:
   ngxUptodate:
     runs-on: ubuntu-latest
-    needs: [ci/circleci: build]
     steps:
+      - name: Wait for build to succeed
+        uses: fountainhead/action-wait-for-check@v1.0.0
+        id: wait-for-build
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: "ci/circleci: build"
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Updating ng dependencies
         uses: tinesoft/ngx-uptodate@v1.1.1
+        if: steps.wait-for-build.outputs.conclusion == 'success'
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           pr-labels: ng-update, automated pr, automerge
