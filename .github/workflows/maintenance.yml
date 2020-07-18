@@ -2,7 +2,7 @@ name: "Angular update"
 
 on:
   schedule:
-    - cron:  '30 14 * * *'
+    - cron:  '45 14 * * *'
 
 jobs:
   ngxUptodate:
@@ -13,7 +13,7 @@ jobs:
         id: wait-for-build
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          checkName: "ci/circleci: build"
+          checkName: build
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - name: Updating ng dependencies
         uses: tinesoft/ngx-uptodate@v1.1.1
