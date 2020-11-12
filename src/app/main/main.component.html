@@ -1,4 +1,4 @@
-<p-tabView>
+<p-tabView *ngIf="'masterData' | translate">
   <p-tabPanel [header]="'masterData' | translate" rightIcon="pi pi-id-card">
     <app-master-data></app-master-data>
   </p-tabPanel>
