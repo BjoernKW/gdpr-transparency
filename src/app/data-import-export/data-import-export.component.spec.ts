@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { DataImportExportComponent } from './data-import-export.component';
 import { TranslateModule } from "@ngx-translate/core";
@@ -12,7 +12,7 @@ describe('DataImportExportComponent', () => {
   let component: DataImportExportComponent;
   let fixture: ComponentFixture<DataImportExportComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [DataImportExportComponent],
       imports: [

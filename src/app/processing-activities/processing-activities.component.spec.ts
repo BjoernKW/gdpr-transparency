@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ProcessingActivitiesComponent } from './processing-activities.component';
 import { ReactiveFormsModule } from "@angular/forms";
@@ -12,9 +12,9 @@ describe('ProcessingActivitiesComponent', () => {
   let component: ProcessingActivitiesComponent;
   let fixture: ComponentFixture<ProcessingActivitiesComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ ProcessingActivitiesComponent ],
+      declarations: [ProcessingActivitiesComponent],
       imports: [
         ReactiveFormsModule,
         TableModule,

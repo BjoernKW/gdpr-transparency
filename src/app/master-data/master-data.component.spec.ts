@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { MasterDataComponent } from './master-data.component';
 import { ReactiveFormsModule } from "@angular/forms";
@@ -11,7 +11,7 @@ describe('MasterDataComponent', () => {
   let component: MasterDataComponent;
   let fixture: ComponentFixture<MasterDataComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [MasterDataComponent],
       imports: [
