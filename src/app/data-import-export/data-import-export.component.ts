@@ -94,16 +94,11 @@ export class DataImportExportComponent implements OnInit {
   }
 
   private static triggerDownload(dataURL: string, filename: string) {
-    if (window.navigator && window.navigator.msSaveOrOpenBlob) {
-      window.navigator.msSaveOrOpenBlob(dataURL, filename);
-      return;
-    } else {
-      const a = window.document.createElement('a');
-      a.href = dataURL;
-      a.download = filename;
-      document.body.appendChild(a);
-      a.click();  // IE: "Access is denied"; see: https://connect.microsoft.com/IE/feedback/details/797361/ie-10-treats-blob-url-as-cross-origin-and-denies-access
-      document.body.removeChild(a);
-    }
+    const a = window.document.createElement('a');
+    a.href = dataURL;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();  // IE: "Access is denied"; see: https://connect.microsoft.com/IE/feedback/details/797361/ie-10-treats-blob-url-as-cross-origin-and-denies-access
+    document.body.removeChild(a);
   }
 }
