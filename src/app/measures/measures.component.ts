@@ -19,10 +19,10 @@ export class MeasuresComponent implements OnInit, OnDestroy {
 
   form!: FormGroup;
 
-  measures: any[] | undefined;
+  measures: any[] = [];
   selectedMeasure: Measure | undefined;
   changed = false;
-  columns: any[] | undefined;
+  columns: any[] = [];
   loading = false;
 
   faTrash = faTrash;

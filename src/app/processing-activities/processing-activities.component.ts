@@ -19,10 +19,10 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 
   form!: FormGroup;
 
-  processingActivities: any[] | undefined;
+  processingActivities: any[] = [];
   selectedProcessingActivity: ProcessingActivity | undefined;
   changed = false;
-  columns: any[] | undefined;
+  columns: any[] = [];
   loading = false;
 
   faTrash = faTrash;
