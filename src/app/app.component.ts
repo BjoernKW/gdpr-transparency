@@ -12,7 +12,7 @@ import { TranslateService } from "@ngx-translate/core";
 export class AppComponent implements OnInit, OnDestroy {
 
   currentYear = new Date().getFullYear();
-  masterData: MasterData | undefined;
+  masterData: MasterData | undefined | null;
   private _masterDataSubscription: Subscription | undefined;
 
   constructor(
