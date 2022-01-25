@@ -9,7 +9,7 @@ import { BehaviorSubject } from "rxjs";
 })
 export class MasterDataService {
 
-  private _masterDataChanged = new BehaviorSubject<MasterData>(null);
+  private _masterDataChanged = new BehaviorSubject<MasterData | null>(null);
   masterDataChanged$ = this._masterDataChanged.asObservable();
 
   table: Dexie.Table<MasterData, number>;
@@ -26,13 +26,13 @@ export class MasterDataService {
     return this.table.toArray();
   }
 
-  add(data) {
+  add(data: any) {
     this._masterDataChanged.next(data);
 
     return this.table.add(data);
   }
 
-  update(id: number, data) {
+  update(id: number, data: any) {
     this._masterDataChanged.next(data);
 
     return this.table.update(id, data);

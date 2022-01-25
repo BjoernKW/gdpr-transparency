@@ -9,7 +9,7 @@ import { BehaviorSubject } from "rxjs";
 })
 export class ProcessingActivityService {
 
-  private _processingActivityChanged = new BehaviorSubject<ProcessingActivity>(null);
+  private _processingActivityChanged = new BehaviorSubject<ProcessingActivity | null>(null);
   processingActivityChanged$ = this._processingActivityChanged.asObservable();
 
   table: Dexie.Table<ProcessingActivity, number>;
@@ -26,13 +26,13 @@ export class ProcessingActivityService {
     return this.table.toArray();
   }
 
-  add(data) {
+  add(data: any) {
     this._processingActivityChanged.next(data);
 
     return this.table.add(data);
   }
 
-  update(id: number, data) {
+  update(id: number, data: any) {
     this._processingActivityChanged.next(data);
 
     return this.table.update(id, data);

@@ -1,5 +1,5 @@
 export interface MasterData {
-  id: number;
+  id: number | undefined;
   company: string;
   legalRepresentative: string;
   address: string;

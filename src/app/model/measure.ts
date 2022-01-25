@@ -1,5 +1,5 @@
 export interface Measure {
-  id: number;
+  id: number | undefined;
   category: string;
   name: string;
   value: string;

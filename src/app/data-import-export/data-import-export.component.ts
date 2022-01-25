@@ -34,7 +34,7 @@ export class DataImportExportComponent implements OnInit {
 
   exportData() {
     this._dexieService.exportDatabase().then(blob => {
-      blob.text().then(value => {
+      blob.text().then((value: any) => {
         DataImportExportComponent.triggerDownload("data:application/json;charset=utf-8," + encodeURIComponent(value), "gdpr-transparency-export.json");
 
         this._translateService.get(
@@ -64,6 +64,7 @@ export class DataImportExportComponent implements OnInit {
       this._confirmationService.confirm({
         message: translations['areYouSure'],
         accept: () => {
+          // @ts-ignore
           const importFile = $event.target['files'][0] as File;
           if (importFile) {
             this._masterDataService.clear()

@@ -17,12 +17,12 @@ import * as equal from 'fast-deep-equal';
 })
 export class MeasuresComponent implements OnInit, OnDestroy {
 
-  form: FormGroup;
+  form: FormGroup | undefined;
 
-  measures: Measure[];
-  selectedMeasure: Measure;
+  measures: Measure[] | undefined;
+  selectedMeasure: Measure | undefined;
   changed = false;
-  columns: { field: string, header: string }[];
+  columns: { field: string; header: string; }[] | undefined;
   loading = false;
 
   faTrash = faTrash;
@@ -30,8 +30,8 @@ export class MeasuresComponent implements OnInit, OnDestroy {
   faTimes = faTimes;
   faUndo = faUndo;
 
-  private _measureSubscription: Subscription;
-  private _formSubscription: Subscription;
+  private _measureSubscription: Subscription | undefined;
+  private _formSubscription: Subscription | undefined;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -82,9 +82,9 @@ export class MeasuresComponent implements OnInit, OnDestroy {
   }
 
   save(): void {
-    if (this.selectedMeasure) {
+    if (this.selectedMeasure && this.selectedMeasure.id) {
       this._measureService
-        .update(this.selectedMeasure.id, this.form.value)
+        .update(this.selectedMeasure.id, this.form?.value)
         .then(() => {
           this._translateService.get(
             [
@@ -103,7 +103,7 @@ export class MeasuresComponent implements OnInit, OnDestroy {
         });
     } else {
       this._measureService
-        .add(this.form.value)
+        .add(this.form?.value)
         .then(() => {
           this._translateService.get(
             [
@@ -165,31 +165,40 @@ export class MeasuresComponent implements OnInit, OnDestroy {
   }
 
   onRowSelect() {
-    this._measureService.get(this.selectedMeasure.id).then(() => {
-      let measureID = this.selectedMeasure.id;
-      delete this.selectedMeasure.id;
+    if (this.selectedMeasure) {
+      const form = this.form;
+      const selectedMeasure = this.selectedMeasure;
+      const selectedMeasureID = selectedMeasure.id;
 
-      this.form.setValue(this.selectedMeasure);
+      if (selectedMeasureID) {
+        this._measureService.get(selectedMeasureID).then(() => {
+          delete selectedMeasure.id;
 
-      this.selectedMeasure['id'] = measureID;
-    });
+          form?.setValue(selectedMeasure);
+
+          selectedMeasure['id'] = selectedMeasureID;
+        });
+      }
+    }
   }
 
   onRowUnselect() {
-    this.selectedMeasure = null;
-    this.form.reset();
+    this.selectedMeasure = undefined;
+    this.form?.reset();
   }
 
   reset() {
-    this.selectedMeasure = null;
+    this.selectedMeasure = undefined;
   }
 
   discard() {
-    let measureID = this.selectedMeasure.id;
-    delete this.selectedMeasure.id;
+    if (this.selectedMeasure) {
+      let measureID = this.selectedMeasure.id;
+      delete this.selectedMeasure.id;
 
-    this.form.setValue(this.selectedMeasure);
+      this.form?.setValue(this.selectedMeasure);
 
-    this.selectedMeasure['id'] = measureID;
+      this.selectedMeasure['id'] = measureID;
+    }
   }
 }

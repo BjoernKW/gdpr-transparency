@@ -17,12 +17,12 @@ import * as equal from 'fast-deep-equal';
 })
 export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 
-  form: FormGroup;
+  form: FormGroup | undefined;
 
-  processingActivities: ProcessingActivity[];
-  selectedProcessingActivity: ProcessingActivity;
+  processingActivities: ProcessingActivity[] | undefined;
+  selectedProcessingActivity: ProcessingActivity | undefined;
   changed = false;
-  columns: { field: string, header: string }[];
+  columns: { field: string; header: string; }[] | undefined;
   loading = false;
 
   faTrash = faTrash;
@@ -30,8 +30,8 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
   faTimes = faTimes;
   faUndo = faUndo;
 
-  private _processingActivitySubscription: Subscription;
-  private _formSubscription: Subscription;
+  private _processingActivitySubscription: Subscription | undefined;
+  private _formSubscription: Subscription | undefined;
 
   constructor(
     private _formBuilder: FormBuilder,
@@ -97,9 +97,9 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
   }
 
   save(): void {
-    if (this.selectedProcessingActivity) {
+    if (this.selectedProcessingActivity && this.selectedProcessingActivity.id) {
       this._processingActivityService
-        .update(this.selectedProcessingActivity.id, this.form.value)
+        .update(this.selectedProcessingActivity.id, this.form?.value)
         .then(() => {
           this._translateService.get(
             [
@@ -118,7 +118,7 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
         });
     } else {
       this._processingActivityService
-        .add(this.form.value)
+        .add(this.form?.value)
         .then(() => {
           this._translateService.get(
             [
@@ -180,31 +180,40 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
   }
 
   onRowSelect() {
-    this._processingActivityService.get(this.selectedProcessingActivity.id).then(() => {
-      let processingActivityID = this.selectedProcessingActivity.id;
-      delete this.selectedProcessingActivity.id;
+    if (this.selectedProcessingActivity) {
+      const form = this.form;
+      const selectedProcessingActivity = this.selectedProcessingActivity;
+      const selectedProcessingActivityID = selectedProcessingActivity.id;
 
-      this.form.setValue(this.selectedProcessingActivity);
+      if (selectedProcessingActivityID) {
+        this._processingActivityService.get(selectedProcessingActivityID).then(() => {
+          delete selectedProcessingActivity.id;
 
-      this.selectedProcessingActivity['id'] = processingActivityID;
-    });
+          form?.setValue(selectedProcessingActivity);
+
+          selectedProcessingActivity['id'] = selectedProcessingActivityID;
+        });
+      }
+    }
   }
 
   reset() {
-    this.selectedProcessingActivity = null;
+    this.selectedProcessingActivity = undefined;
   }
 
   discard() {
-    let processingActivityID = this.selectedProcessingActivity.id;
-    delete this.selectedProcessingActivity.id;
+    if (this.selectedProcessingActivity) {
+      let processingActivityID = this.selectedProcessingActivity.id;
+      delete this.selectedProcessingActivity.id;
 
-    this.form.setValue(this.selectedProcessingActivity);
+      this.form?.setValue(this.selectedProcessingActivity);
 
-    this.selectedProcessingActivity['id'] = processingActivityID;
+      this.selectedProcessingActivity['id'] = processingActivityID;
+    }
   }
 
   onRowUnselect() {
-    this.selectedProcessingActivity = null;
-    this.form.reset();
+    this.selectedProcessingActivity = undefined;
+    this.form?.reset();
   }
 }
