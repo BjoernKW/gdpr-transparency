@@ -17,12 +17,12 @@ import * as equal from 'fast-deep-equal';
 })
 export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 
-  form: FormGroup | undefined;
+  form!: FormGroup;
 
-  processingActivities: ProcessingActivity[] | undefined;
+  processingActivities: any[] | undefined;
   selectedProcessingActivity: ProcessingActivity | undefined;
   changed = false;
-  columns: { field: string; header: string; }[] | undefined;
+  columns: any[] | undefined;
   loading = false;
 
   faTrash = faTrash;
@@ -99,7 +99,7 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
   save(): void {
     if (this.selectedProcessingActivity && this.selectedProcessingActivity.id) {
       this._processingActivityService
-        .update(this.selectedProcessingActivity.id, this.form?.value)
+        .update(this.selectedProcessingActivity.id, this.form.value)
         .then(() => {
           this._translateService.get(
             [
@@ -118,7 +118,7 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
         });
     } else {
       this._processingActivityService
-        .add(this.form?.value)
+        .add(this.form.value)
         .then(() => {
           this._translateService.get(
             [
@@ -206,7 +206,7 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
       let processingActivityID = this.selectedProcessingActivity.id;
       delete this.selectedProcessingActivity.id;
 
-      this.form?.setValue(this.selectedProcessingActivity);
+      this.form.setValue(this.selectedProcessingActivity);
 
       this.selectedProcessingActivity['id'] = processingActivityID;
     }
@@ -214,6 +214,6 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 
   onRowUnselect() {
     this.selectedProcessingActivity = undefined;
-    this.form?.reset();
+    this.form.reset();
   }
 }

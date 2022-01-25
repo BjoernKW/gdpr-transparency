@@ -17,7 +17,7 @@ import { Subscription } from "rxjs";
 })
 export class MasterDataComponent implements OnInit, OnDestroy {
 
-  form: FormGroup | undefined;
+  form!: FormGroup;
   private _masterData: MasterData | undefined;
   changed = false;
 
@@ -53,7 +53,7 @@ export class MasterDataComponent implements OnInit, OnDestroy {
           delete this._masterData.id;
         }
 
-        this.form?.setValue(this._masterData);
+        this.form.setValue(this._masterData);
 
         this._masterData['id'] = masterDataID;
       }
@@ -68,9 +68,9 @@ export class MasterDataComponent implements OnInit, OnDestroy {
 
   save(): void {
     if (this._masterData && this._masterData.id) {
-      this._masterDataService.update(this._masterData.id, this.form?.value);
+      this._masterDataService.update(this._masterData.id, this.form.value);
     } else {
-      this._masterDataService.add(this.form?.value);
+      this._masterDataService.add(this.form.value);
     }
 
     this.changed = false;
@@ -94,7 +94,7 @@ export class MasterDataComponent implements OnInit, OnDestroy {
       let masterDataID = this._masterData.id;
       delete this._masterData.id;
 
-      this.form?.setValue(this._masterData);
+      this.form.setValue(this._masterData);
 
       this._masterData['id'] = masterDataID;
     }

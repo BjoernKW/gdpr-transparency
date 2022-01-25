@@ -17,12 +17,12 @@ import * as equal from 'fast-deep-equal';
 })
 export class MeasuresComponent implements OnInit, OnDestroy {
 
-  form: FormGroup | undefined;
+  form!: FormGroup;
 
-  measures: Measure[] | undefined;
+  measures: any[] | undefined;
   selectedMeasure: Measure | undefined;
   changed = false;
-  columns: { field: string; header: string; }[] | undefined;
+  columns: any[] | undefined;
   loading = false;
 
   faTrash = faTrash;
@@ -84,7 +84,7 @@ export class MeasuresComponent implements OnInit, OnDestroy {
   save(): void {
     if (this.selectedMeasure && this.selectedMeasure.id) {
       this._measureService
-        .update(this.selectedMeasure.id, this.form?.value)
+        .update(this.selectedMeasure.id, this.form.value)
         .then(() => {
           this._translateService.get(
             [
@@ -103,7 +103,7 @@ export class MeasuresComponent implements OnInit, OnDestroy {
         });
     } else {
       this._measureService
-        .add(this.form?.value)
+        .add(this.form.value)
         .then(() => {
           this._translateService.get(
             [
@@ -184,7 +184,7 @@ export class MeasuresComponent implements OnInit, OnDestroy {
 
   onRowUnselect() {
     this.selectedMeasure = undefined;
-    this.form?.reset();
+    this.form.reset();
   }
 
   reset() {
@@ -196,7 +196,7 @@ export class MeasuresComponent implements OnInit, OnDestroy {
       let measureID = this.selectedMeasure.id;
       delete this.selectedMeasure.id;
 
-      this.form?.setValue(this.selectedMeasure);
+      this.form.setValue(this.selectedMeasure);
 
       this.selectedMeasure['id'] = measureID;
     }
