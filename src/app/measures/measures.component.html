@@ -80,13 +80,13 @@
       <td *ngFor="let column of columns">
         <span *ngIf="column.field === 'value'" class="do-not-print">
           <p-inputSwitch [ngModel]="rowData[column.field]"
-                         disabled
-                         readonly></p-inputSwitch>
+                         [disabled]="true"
+                         [readonly]="true"></p-inputSwitch>
         </span>
         <span *ngIf="column.field === 'value'" class="print">
           <input [checked]="rowData[column.field]"
-                 disabled
-                 readonly
+                 [disabled]="true"
+                 [readonly]="true"
                  type="checkbox">
         </span>
         <span *ngIf="column.field !== 'value'">
