@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { faFileExport, faFileImport } from '@fortawesome/free-solid-svg-icons';
 import { DexieService } from '../dexie.service';
@@ -13,7 +13,7 @@ import { TranslateService } from "@ngx-translate/core";
   templateUrl: './data-import-export.component.html',
   styleUrls: ['./data-import-export.component.scss']
 })
-export class DataImportExportComponent implements OnInit {
+export class DataImportExportComponent {
 
   faFileImport = faFileImport;
   faFileExport = faFileExport;
@@ -27,9 +27,6 @@ export class DataImportExportComponent implements OnInit {
     private _translateService: TranslateService,
     private _messageService: MessageService
   ) {
-  }
-
-  ngOnInit(): void {
   }
 
   exportData() {

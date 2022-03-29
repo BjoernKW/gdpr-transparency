@@ -125,8 +125,21 @@
               "devServerTarget": "gdpr-transparency:serve:production"
             }
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
-    }},
-  "defaultProject": "gdpr-transparency"
+    }
+  },
+  "defaultProject": "gdpr-transparency",
+  "cli": {
+    "defaultCollection": "@angular-eslint/schematics"
+  }
 }
