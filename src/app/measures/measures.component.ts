@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { MeasureService } from "../measure.service";
 import { ConfirmationService, MessageService } from "primeng/api";
 
@@ -17,7 +17,7 @@ import * as equal from 'fast-deep-equal';
 })
 export class MeasuresComponent implements OnInit, OnDestroy {
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   measures: any[] = [];
   selectedMeasure: Measure | undefined;
@@ -34,7 +34,7 @@ export class MeasuresComponent implements OnInit, OnDestroy {
   private _formSubscription: Subscription | undefined;
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private _measureService: MeasureService,
     private _confirmationService: ConfirmationService,
     private _translateService: TranslateService,

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { MasterDataService } from "../master-data.service";
 import { MasterData } from "../model/master-data";
 
@@ -17,7 +17,7 @@ import { Subscription } from "rxjs";
 })
 export class MasterDataComponent implements OnInit, OnDestroy {
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   private _masterData: MasterData | undefined;
   changed = false;
 
@@ -27,7 +27,7 @@ export class MasterDataComponent implements OnInit, OnDestroy {
   private _formSubscription: Subscription | undefined;
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private _masterDataService: MasterDataService,
     private _translateService: TranslateService,
     private _messageService: MessageService

@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from "@angular/forms";
 import { ProcessingActivityService } from "../processing-activity.service";
 import { ProcessingActivity } from "../model/processing-activity";
 import { TranslateService } from "@ngx-translate/core";
@@ -17,7 +17,7 @@ import * as equal from 'fast-deep-equal';
 })
 export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 
-  form!: FormGroup;
+  form!: UntypedFormGroup;
 
   processingActivities: any[] = [];
   selectedProcessingActivity: ProcessingActivity | undefined;
@@ -34,7 +34,7 @@ export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
   private _formSubscription: Subscription | undefined;
 
   constructor(
-    private _formBuilder: FormBuilder,
+    private _formBuilder: UntypedFormBuilder,
     private _processingActivityService: ProcessingActivityService,
     private _confirmationService: ConfirmationService,
     private _translateService: TranslateService,
