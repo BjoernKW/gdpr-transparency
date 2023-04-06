@@ -19,7 +19,7 @@
     "y18n": "5.0.8"
   },
   "dependencies": {
-    "@angular/animations": "^15.2.5",
+    "@angular/animations": "^15.2.6",
     "@angular/cdk": "^15.2.6",
     "@angular/common": "^15.2.5",
     "@angular/compiler": "^15.2.6",
