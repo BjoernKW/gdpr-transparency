@@ -35,7 +35,7 @@
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
     "@ngx-translate/core": "^14.0.0",
-    "@ngx-translate/http-loader": "^7.0.0",
+    "@ngx-translate/http-loader": "^8.0.0",
     "bootstrap": "^5.3.2",
     "dexie": "^3.2.4",
     "dexie-export-import": "^4.0.7",
