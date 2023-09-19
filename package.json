@@ -29,7 +29,7 @@
     "@angular/platform-browser": "^15.2.8",
     "@angular/platform-browser-dynamic": "^15.2.8",
     "@angular/router": "^15.2.8",
-    "@angular/service-worker": "^15.2.8",
+    "@angular/service-worker": "^16.2.5",
     "@fortawesome/angular-fontawesome": "^0.13.0",
     "@fortawesome/fontawesome-free": "^6.4.2",
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
