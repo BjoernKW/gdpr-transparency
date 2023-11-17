@@ -27,7 +27,7 @@
     "@angular/forms": "^17.0.3",
     "@angular/localize": "^17.0.3",
     "@angular/platform-browser": "^17.0.3",
-    "@angular/platform-browser-dynamic": "^17.0.2",
+    "@angular/platform-browser-dynamic": "^17.0.3",
     "@angular/router": "^17.0.3",
     "@angular/service-worker": "^17.0.3",
     "@fortawesome/angular-fontawesome": "^0.14.0",
