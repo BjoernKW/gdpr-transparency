@@ -1,17 +1,18 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { faFileExport, faFileImport } from '@fortawesome/free-solid-svg-icons';
-import { DexieService } from '../dexie.service';
-import { MasterDataService } from "../master-data.service";
-import { ProcessingActivityService } from "../processing-activity.service";
-import { MeasureService } from "../measure.service";
-import { ConfirmationService, MessageService } from "primeng/api";
-import { TranslateService } from "@ngx-translate/core";
+import {faFileExport, faFileImport} from '@fortawesome/free-solid-svg-icons';
+import {DexieService} from '../dexie.service';
+import {MasterDataService} from "../master-data.service";
+import {ProcessingActivityService} from "../processing-activity.service";
+import {MeasureService} from "../measure.service";
+import {ConfirmationService, MessageService} from "primeng/api";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-data-import-export',
-  templateUrl: './data-import-export.component.html',
-  styleUrls: ['./data-import-export.component.scss']
+    selector: 'app-data-import-export',
+    templateUrl: './data-import-export.component.html',
+    styleUrls: ['./data-import-export.component.scss'],
+    standalone: false
 })
 export class DataImportExportComponent {
 

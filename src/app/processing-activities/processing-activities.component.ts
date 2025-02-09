@@ -11,9 +11,10 @@ import { Subscription } from "rxjs";
 import * as equal from 'fast-deep-equal';
 
 @Component({
-  selector: 'app-processing-activities',
-  templateUrl: './processing-activities.component.html',
-  styleUrls: ['./processing-activities.component.scss']
+    selector: 'app-processing-activities',
+    templateUrl: './processing-activities.component.html',
+    styleUrls: ['./processing-activities.component.scss'],
+    standalone: false
 })
 export class ProcessingActivitiesComponent implements OnInit, OnDestroy {
 

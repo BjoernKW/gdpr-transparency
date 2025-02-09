@@ -11,9 +11,10 @@ import * as equal from 'fast-deep-equal';
 import { Subscription } from "rxjs";
 
 @Component({
-  selector: 'app-master-data',
-  templateUrl: './master-data.component.html',
-  styleUrls: ['./master-data.component.scss']
+    selector: 'app-master-data',
+    templateUrl: './master-data.component.html',
+    styleUrls: ['./master-data.component.scss'],
+    standalone: false
 })
 export class MasterDataComponent implements OnInit, OnDestroy {
 

@@ -11,9 +11,10 @@ import { Measure } from "../model/measure";
 import * as equal from 'fast-deep-equal';
 
 @Component({
-  selector: 'app-measures',
-  templateUrl: './measures.component.html',
-  styleUrls: ['./measures.component.scss']
+    selector: 'app-measures',
+    templateUrl: './measures.component.html',
+    styleUrls: ['./measures.component.scss'],
+    standalone: false
 })
 export class MeasuresComponent implements OnInit, OnDestroy {
 

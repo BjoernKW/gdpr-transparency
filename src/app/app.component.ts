@@ -1,13 +1,14 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { MasterData } from "./model/master-data";
-import { MasterDataService } from "./master-data.service";
-import { Subscription } from "rxjs";
-import { TranslateService } from "@ngx-translate/core";
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {MasterData} from "./model/master-data";
+import {MasterDataService} from "./master-data.service";
+import {Subscription} from "rxjs";
+import {TranslateService} from "@ngx-translate/core";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+    selector: 'app-root',
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.scss'],
+    standalone: false
 })
 export class AppComponent implements OnInit, OnDestroy {
 
